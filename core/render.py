@@ -10,15 +10,16 @@ from __future__ import annotations
 
 import re
 
-from jinja2 import Environment, select_autoescape
+from jinja2 import Environment
 
 from .schema import AuditReport
 
-_env = Environment(
-    autoescape=select_autoescape(enabled_extensions=("html",), default=False),
-    trim_blocks=True,
-    lstrip_blocks=True,
-    keep_trailing_newline=True,
+# Markdown is plain text — never escape. HTML escapes to stay injection-safe.
+_md_env = Environment(
+    autoescape=False, trim_blocks=True, lstrip_blocks=True, keep_trailing_newline=True
+)
+_html_env = Environment(
+    autoescape=True, trim_blocks=True, lstrip_blocks=True, keep_trailing_newline=True
 )
 
 _MARKDOWN_TEMPLATE = """\
@@ -130,11 +131,11 @@ def _normalize_blank_lines(text: str) -> str:
 
 def to_markdown(report: AuditReport) -> str:
     """Render the report as Markdown matching the ``target_report.md`` layout."""
-    rendered = _env.from_string(_MARKDOWN_TEMPLATE).render(report=report)
+    rendered = _md_env.from_string(_MARKDOWN_TEMPLATE).render(report=report)
     return _normalize_blank_lines(rendered)
 
 
 def to_html(report: AuditReport) -> str:
     """Render the report as a standalone HTML document."""
-    rendered = _env.from_string(_HTML_TEMPLATE).render(report=report)
+    rendered = _html_env.from_string(_HTML_TEMPLATE).render(report=report)
     return rendered.strip() + "\n"
