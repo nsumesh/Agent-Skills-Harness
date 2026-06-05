@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import copy
 import json
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Callable
 
@@ -86,7 +87,39 @@ def fake_anthropic():
 
 
 @pytest.fixture
-def respx_http():
-    """Placeholder for the respx HTTP mock loading recorded fixtures (implemented in Phase 1)."""
-    pytest.importorskip("respx")
-    pytest.skip("recorded HTTP fixtures not loaded yet (Phase 1)")
+def http_fixtures():
+    """Factory yielding a respx context that replays a store's recorded HTTP fixtures.
+
+    Usage::
+
+        def test_x(http_fixtures):
+            with http_fixtures("zenrojas") as (manifest, router):
+                ... call code that makes httpx requests ...
+
+    Routes are matched by exact URL; anything not recorded falls through to a 404, so a
+    probe hitting an un-captured path degrades honestly rather than erroring.
+    """
+    import httpx
+    import respx
+
+    base_dir = FIXTURES / "http"
+
+    @contextmanager
+    def _load(slug: str):
+        store_dir = base_dir / slug
+        manifest = json.loads((store_dir / "manifest.json").read_text())
+        with respx.mock(assert_all_called=False) as router:
+            for route in manifest["routes"]:
+                url = route.get("url") or manifest["base"].rstrip("/") + route["path"]
+                headers = {"content-type": route.get("content_type", "text/html")}
+                headers.update({k.lower(): v for k, v in route.get("headers", {}).items()})
+                body = route.get("body")
+                content = (store_dir / body).read_bytes() if body else b""
+                router.route(method=route.get("method", "GET"), url=url).mock(
+                    return_value=httpx.Response(route["status"], headers=headers, content=content)
+                )
+            # Catch-all: un-recorded requests 404 instead of raising.
+            router.route().mock(return_value=httpx.Response(404, content=b"not recorded"))
+            yield manifest, router
+
+    return _load
