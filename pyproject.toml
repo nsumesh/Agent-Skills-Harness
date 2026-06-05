@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qosmic-audit-harness"
+version = "0.1.0"
+description = "A runtime harness that turns a coding agent into a Shopify CRO audit agent, plus a self-improving eval loop."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2",
+    "httpx>=0.27",
+    "jinja2>=3",
+    "python-dotenv>=1",
+]
+
+[project.optional-dependencies]
+# The agent/eval LLM path. Imported lazily so the offline test tier never needs these.
+agent = [
+    "anthropic>=0.40",
+    "mcp>=1.0",
+    "fastmcp>=0.2",
+]
+# The live crawl path (browser + Firecrawl). Opt-in; offline tests use a fake crawler.
+crawl = [
+    "playwright>=1.44",
+    "firecrawl-py>=1.0",
+]
+# Everything needed to run the offline gate (`make test`) and lint.
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+# Console entrypoints. The modules they reference are built in later phases;
+# declaring them here is harmless until those modules exist.
+qosmic-audit = "mcp.qosmic_audit_server.server:main"
+qosmic-eval = "eval.cli:main"
+qosmic-loop = "eval.loop.run_loop:main"
+
+[tool.setuptools]
+# Flat layout: top-level importable packages live at the repo root.
+packages = ["core"]
+
+[tool.pytest.ini_options]
+# `.` on the path so `import core` works without an editable install.
+pythonpath = ["."]
+testpaths = ["tests", "eval"]
+# Default run is the offline CI gate: no live network, no paid LLM calls.
+addopts = "-m 'not live and not llm' -ra"
+markers = [
+    "live: hits real stores / PSI / Firecrawl / Playwright (opt-in via --run-live)",
+    "llm: makes real Anthropic API calls (opt-in via --run-llm)",
+]
+
+[tool.coverage.run]
+source = ["core", "eval"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+ignore = ["E501"]
