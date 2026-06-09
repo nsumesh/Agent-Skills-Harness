@@ -1,0 +1,72 @@
+{
+  "store_url": "https://gingerpeople.com",
+  "slug": "gingerpeople",
+  "platform": "wordpress",
+  "catalog_branch": "sitemap",
+  "catalog_source": "sitemap",
+  "catalog_count": 44,
+  "reached_urls": [
+    {
+      "type": "homepage",
+      "url": "https://gingerpeople.com/",
+      "status": 200,
+      "inspected": true
+    },
+    {
+      "type": "pdp",
+      "url": "https://gingerpeople.com/products/",
+      "status": 200,
+      "inspected": true
+    },
+    {
+      "type": "cart",
+      "url": "https://gingerpeople.com/cart",
+      "status": 404,
+      "inspected": true
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "screenshot",
+      "surface": "homepage",
+      "url": "https://gingerpeople.com/",
+      "path": "screenshots/00-homepage.png"
+    },
+    {
+      "type": "content",
+      "surface": "homepage",
+      "url": "https://gingerpeople.com/",
+      "path": "content/00-homepage.md"
+    },
+    {
+      "type": "screenshot",
+      "surface": "pdp",
+      "url": "https://gingerpeople.com/products/",
+      "path": "screenshots/01-pdp.png"
+    },
+    {
+      "type": "content",
+      "surface": "pdp",
+      "url": "https://gingerpeople.com/products/",
+      "path": "content/01-pdp.md"
+    },
+    {
+      "type": "screenshot",
+      "surface": "cart",
+      "url": "https://gingerpeople.com/cart",
+      "path": "screenshots/02-cart.png"
+    },
+    {
+      "type": "content",
+      "surface": "cart",
+      "url": "https://gingerpeople.com/cart",
+      "path": "content/02-cart.md"
+    }
+  ],
+  "not_captured": [],
+  "counts": {
+    "surfaces": 3,
+    "artifacts": 6,
+    "not_captured": 0
+  }
+}

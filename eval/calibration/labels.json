@@ -1,0 +1,16 @@
+{
+  "rubric_version": "v1",
+  "known_good": "eval/fixtures/reports/target_report.json",
+  "bundle": "gingerpeople",
+  "note": "Human labels for the calibration set: the known-good plus 7 ablations. `target` records which gate or judge dimension a human expects to catch each flaw.",
+  "items": [
+    { "name": "known_good", "good": true, "target": null },
+    { "name": "drop_to_nine", "good": false, "target": { "type": "gate", "check": "exactly_ten" } },
+    { "name": "drop_a_pillar", "good": false, "target": { "type": "gate", "check": "pillar_floor" } },
+    { "name": "break_a_citation", "good": false, "target": { "type": "gate", "check": "citation_resolution" } },
+    { "name": "fake_a_pass", "good": false, "target": { "type": "gate", "check": "fabrication_detection" } },
+    { "name": "strip_guardrail", "good": false, "target": { "type": "gate", "check": "all_fields" } },
+    { "name": "vague_hypothesis", "good": false, "target": { "type": "dimension", "dimension": "specificity" } },
+    { "name": "overconfident_new_page", "good": false, "target": { "type": "dimension", "dimension": "calibration" } }
+  ]
+}

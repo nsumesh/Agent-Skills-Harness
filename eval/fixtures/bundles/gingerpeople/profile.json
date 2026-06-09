@@ -1,0 +1,27 @@
+{
+  "url": "https://gingerpeople.com",
+  "slug": "gingerpeople",
+  "platform": "wordpress",
+  "is_shopify": false,
+  "catalog_branch": "sitemap",
+  "endpoints": {
+    "homepage": 200,
+    "products.json": 404,
+    "cart": 404,
+    "sitemap.xml": 200,
+    "robots.txt": 200
+  },
+  "signals": {
+    "shopify_cdn": false,
+    "myshopify": false,
+    "shopify_theme": false,
+    "wp_content": true,
+    "wp_json": true,
+    "woocommerce": false,
+    "products_json": false
+  },
+  "notes": [
+    "products.json unusable (HTTP 404); using 'sitemap' fallback.",
+    "/cart returned HTTP 404 (retailer-routed or non-transacting)."
+  ]
+}

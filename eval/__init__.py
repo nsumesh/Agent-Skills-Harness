@@ -1,4 +1,1 @@
-"""The eval system: deterministic checks, the judge, calibration, red-team, and the loop.
-
-Imports `core/` directly (no network hop). Built out across Phases 4-7.
-"""
+"""Eval system: deterministic checks, LLM judge, calibration, and red-team. Imports core/ directly."""

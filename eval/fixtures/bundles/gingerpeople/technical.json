@@ -1,0 +1,77 @@
+[
+  {
+    "name": "SSL Certificate",
+    "status": "Pass",
+    "detail": "HTTPS storefront loaded successfully."
+  },
+  {
+    "name": "HTTPS Redirect",
+    "status": "Pass",
+    "detail": "http:// 301-redirected to HTTPS."
+  },
+  {
+    "name": "Sitemap",
+    "status": "Pass",
+    "detail": "sitemap.xml present and well-formed."
+  },
+  {
+    "name": "Robots.txt",
+    "status": "Pass",
+    "detail": "robots.txt present."
+  },
+  {
+    "name": "Critical Pages Loading",
+    "status": "Warn",
+    "detail": "Homepage loaded; /cart returned HTTP 404."
+  },
+  {
+    "name": "Meta Tags & Social Previews",
+    "status": "Pass",
+    "detail": "Title, meta description, and Open Graph tags present."
+  },
+  {
+    "name": "Structured Data",
+    "status": "Pass",
+    "detail": "JSON-LD structured data found on the homepage."
+  },
+  {
+    "name": "Favicon",
+    "status": "Pass",
+    "detail": "Favicon served."
+  },
+  {
+    "name": "Mobile-Friendly",
+    "status": "Pass",
+    "detail": "Responsive viewport meta tag present."
+  },
+  {
+    "name": "Page Speed Mobile",
+    "status": "Warn",
+    "detail": "PageSpeed Insights mobile performance score 23."
+  },
+  {
+    "name": "Page Speed Desktop",
+    "status": "Warn",
+    "detail": "PageSpeed Insights desktop performance score 46."
+  },
+  {
+    "name": "Broken Links",
+    "status": "Fail",
+    "detail": "Broken link found: /cart returned HTTP 404."
+  },
+  {
+    "name": "Image Optimization",
+    "status": "Warn",
+    "detail": "Byte-level image weight not measured in this pass."
+  },
+  {
+    "name": "Cookie/Privacy",
+    "status": "Warn",
+    "detail": "Privacy policy link present; consent mechanics not inspected."
+  },
+  {
+    "name": "Checkout Reachable",
+    "status": "Fail",
+    "detail": "Checkout edge not reachable: /cart returned HTTP 404."
+  }
+]
