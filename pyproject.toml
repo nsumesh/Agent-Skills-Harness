@@ -37,20 +37,21 @@ dev = [
 ]
 
 [project.scripts]
-# Console entrypoints. The modules they reference are built in later phases;
+# Console entrypoints. Some modules they reference are built in later phases;
 # declaring them here is harmless until those modules exist.
-qosmic-audit = "mcp.qosmic_audit_server.server:main"
+# NOTE: the server package is `qosmic_audit_server` (not `mcp`) to avoid shadowing the MCP SDK.
+qosmic-audit = "qosmic_audit_server.server:main"
 qosmic-eval = "eval.cli:main"
 qosmic-loop = "eval.loop.run_loop:main"
 
 [tool.setuptools]
 # Flat layout: top-level importable packages live at the repo root.
-packages = ["core"]
+packages = ["core", "qosmic_audit_server", "qosmic_audit_server.tools"]
 
 [tool.pytest.ini_options]
 # `.` on the path so `import core` works without an editable install.
 pythonpath = ["."]
-testpaths = ["tests", "eval"]
+testpaths = ["eval"]
 # Default run is the offline CI gate: no live network, no paid LLM calls.
 addopts = "-m 'not live and not llm' -ra"
 markers = [
@@ -61,6 +62,11 @@ markers = [
 [tool.coverage.run]
 source = ["core", "eval"]
 branch = true
+omit = [
+    "*/test_*.py",            # test files are not product code
+    "*/_build_*.py",          # one-off fixture builders
+    "eval/fixtures/*",        # fixtures + one-off builders
+]
 
 [tool.coverage.report]
 show_missing = true

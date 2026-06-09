@@ -24,6 +24,7 @@ env/
 # Eval loop run artifacts (keep a curated sample, ignore the rest)
 eval/loop/runs/*
 !eval/loop/runs/.gitkeep
+!eval/loop/runs/run_demo.json
 
 # OS / editor cruft
 .DS_Store
