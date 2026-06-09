@@ -1,10 +1,5 @@
-"""Deterministic renderer: an :class:`~core.schema.AuditReport` to Markdown or HTML.
-
-Pure and network-free. The Markdown output reproduces the exact four-section layout of
-``target_report.md`` so a generated report is visually indistinguishable from the bar.
-Whitespace is normalised after templating so the output is stable regardless of Jinja's
-block trimming.
-"""
+"""Deterministic AuditReport-to-Markdown/HTML renderer. The Markdown reproduces the
+target_report.md four-section layout; whitespace is normalised so output is stable."""
 
 from __future__ import annotations
 

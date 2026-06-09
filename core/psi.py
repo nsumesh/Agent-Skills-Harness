@@ -1,8 +1,5 @@
-"""PageSpeed Insights v5 client with retries and an honest degrade path.
-
-Order of attempts: PSI API (needs ``PSI_API_KEY``) -> local Lighthouse CLI (if installed)
--> honest "not measured". The result never claims a score it didn't obtain.
-"""
+"""PageSpeed Insights v5 client. Tries the PSI API, then a local Lighthouse CLI, then
+degrades to "not measured" — it never claims a score it didn't obtain."""
 
 from __future__ import annotations
 
@@ -77,13 +74,8 @@ def run_psi(
 
 
 def _lighthouse_fallback(url: str, strategy: str) -> PsiResult | None:
-    """Use a locally installed Lighthouse CLI if present; otherwise return None.
-
-    Kept intentionally conservative: if anything about the local run is uncertain we return
-    None so the caller degrades to an honest Warn rather than inventing a number.
-    """
+    """Hook for a local Lighthouse CLI run; returns None so the caller degrades to an honest Warn."""
     if shutil.which("lighthouse") is None:
         return None
-    # A full local Lighthouse run is out of scope for the offline tier; presence of the
-    # binary is detected so the scale path is wired, but we do not fabricate a score here.
+    # The binary is detected so the scale path is wired, but we don't fabricate a score here.
     return None

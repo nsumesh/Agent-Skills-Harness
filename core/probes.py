@@ -1,13 +1,6 @@
-"""HTTP probes with a browser-like User-Agent, retries, and honest typed results.
-
-Every probe returns a :class:`ProbeResult` that distinguishes three outcomes:
-  - ``inspected=True, ok=True``  — we checked and it passed
-  - ``inspected=True, ok=False`` — we checked and it failed (a real finding)
-  - ``inspected=False``          — we could not reach a verdict (network/TLS error)
-
-That third state is the whole point: ``checks.py`` maps "not inspected" to an honest
-**Warn**, never a fake **Pass**. A probe never invents a result it didn't observe.
-"""
+"""HTTP probes with retries that return a typed ProbeResult. The key bit is `inspected`:
+a probe reports whether it actually got a verdict, so checks.py can Warn on "couldn't check"
+instead of faking a Pass."""
 
 from __future__ import annotations
 

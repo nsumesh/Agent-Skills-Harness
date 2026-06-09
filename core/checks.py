@@ -1,12 +1,6 @@
-"""Assemble the ~15-row technical-checks table from probes + PSI + homepage HTML.
-
-The cardinal rule (from the brief): **never fake a Pass.** Anything we could not inspect
-degrades to an honest ``Warn``. A check is only ``Pass`` when we actually observed success,
-and only ``Fail`` when we actually observed a failure (e.g. a 404 at /cart).
-
-``run_technical_checks`` always returns exactly the 15 standard rows, in a fixed order, so
-the table is stable across stores and the renderer/eval can rely on it.
-"""
+"""Builds the 15-row technical-checks table from probes + PSI + homepage HTML. Never fakes a
+Pass: anything we couldn't inspect is an honest Warn, and the 15 rows always come back in a
+fixed order."""
 
 from __future__ import annotations
 

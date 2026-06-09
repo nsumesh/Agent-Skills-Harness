@@ -1,20 +1,6 @@
-"""The output contract.
-
-This is the single source of truth for what a Qosmic audit report *is*. The structure
-mirrors `target_report.md` exactly: a title, a 2-3 paragraph executive summary, exactly
-ten proposed experiments, a 3-4 row competitor table, and a ~15 row technical-checks table.
-
-Validators encode the brief's hard rules so a malformed report cannot silently pass:
-  - pillar must be one of the five enum values
-  - every experiment field is required and non-empty
-  - the decision rule must name a guardrail (``Ship if <KPI> ... without <guardrail>``)
-  - expected lift must parse as a percent range; confidence as a percent
-
-Note on the guardrail regex: the calibration target uses "without hurting <metric>" for
-9 of its 10 experiments and "without compliance flags" for one. Anchoring on the word
-"without" (rather than the literal "without hurting") keeps the contract faithful to the
-target instead of rejecting it. The guardrail is whatever follows "without".
-"""
+"""The output contract: Pydantic models + validators that mirror target_report.md so a
+malformed report can't pass (valid pillar, all fields present, a guardrail in the decision
+rule, parseable lift and confidence)."""
 
 from __future__ import annotations
 
@@ -23,11 +9,10 @@ from enum import Enum
 
 from pydantic import BaseModel, ConfigDict, field_validator
 
-# --- shared patterns ---------------------------------------------------------
-
-# "Ship if <something> without <guardrail>" — guardrail clause is mandatory.
+# Decision rule must read "Ship if … without <guardrail>". We anchor on "without" (not
+# "without hurting") because the target uses both forms.
 DECISION_RULE_RE = re.compile(r"^Ship if .+\bwithout\b .+$")
-# A percent range like "+12-20%", "+6-10%" (hyphen, en-dash or em-dash accepted).
+# A percent range like "+12-20%" (hyphen or en/em dash).
 LIFT_RE = re.compile(r"^\+?\s*(\d+(?:\.\d+)?)\s*[-–—]\s*(\d+(?:\.\d+)?)\s*%$")
 # A single percent like "78%".
 CONFIDENCE_RE = re.compile(r"^\s*(\d{1,3})\s*%\s*$")
@@ -58,12 +43,7 @@ def _require_non_empty(v: str) -> str:
 
 
 class Experiment(BaseModel):
-    """One proposed CRO experiment. All twelve attributes are required.
-
-    (The brief calls this "11 fields"; rendered, an experiment carries ``exp_id`` + ``title``
-    in its heading plus ten labelled fields. The labels here are authoritative — they match
-    ``target_report.md`` one-for-one.)
-    """
+    """One proposed CRO experiment; every field is required. The labels match target_report.md one-for-one."""
 
     model_config = ConfigDict(extra="forbid")
 
