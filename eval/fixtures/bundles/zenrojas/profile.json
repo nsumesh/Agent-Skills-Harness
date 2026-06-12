@@ -1,0 +1,24 @@
+{
+  "url": "https://zenrojas.com",
+  "slug": "zenrojas",
+  "platform": "shopify",
+  "is_shopify": true,
+  "catalog_branch": "products_json",
+  "endpoints": {
+    "homepage": 200,
+    "products.json": 200,
+    "cart": 200,
+    "sitemap.xml": 200,
+    "robots.txt": 200
+  },
+  "signals": {
+    "shopify_cdn": true,
+    "myshopify": true,
+    "shopify_theme": true,
+    "wp_content": false,
+    "wp_json": false,
+    "woocommerce": false,
+    "products_json": true
+  },
+  "notes": []
+}

@@ -1,0 +1,264 @@
+{
+  "store_url": "https://zenrojas.com",
+  "store_name": "Zen Rojas",
+  "title": "Zen Rojas audit \u2014 a clear wellness story the product pages don't close",
+  "executive_summary": [
+    "**Zen Rojas has a sharp wellness story; the product pages don't close it.** The storefront merchandises teas by moment \u2014 Sleep & Relaxation, Immune Support, Daily Energy, Digestion \u2014 and the Unwind PDP sells a detailed, ingredient-led story at $12. But the captured product page carries no star rating, no review count, and a \"Sold Out\" variant with no notify-me path, so a first-time buyer of a wellness tea gets benefits but no peer proof and a dead end on stockouts.",
+    "**The catalog is small and consumable \u2014 built for repeat revenue it isn't capturing.** With ~12 SKUs and ~15 cups per bag, tea here is a monthly consumable, yet PDPs offer only one-time purchase and there is no reorder prompt or subscribe option. The brewing essentials (infuser $5, mug $8, tea bags $5) are merchandised separately with no guided pairing, leaving both repeat revenue and basket size on the table.",
+    "**Mobile speed and discovery are the cheapest early wins.** PageSpeed mobile scored 49 against an image-heavy homepage, and the strong moment framing is buried beneath a slideshow and a single vague \"Discover Your Ritual\" CTA. The first test should be structural: add proof to the PDP and promote the moment cards, then layer in subscriptions and a speed fix."
+  ],
+  "experiments": [
+    {
+      "exp_id": "exp-zr-conv-reviews",
+      "title": "Add a review module to product pages",
+      "pillar": "Conversion",
+      "affected_surface": "Product detail page (pattern applies to all PDPs)",
+      "url": "https://zenrojas.com/products/unwind",
+      "evidence": "screenshots/01-pdp.png",
+      "hypothesis": "CVR improves by placing ratings and reviews next to the price so first-time wellness-tea buyers have peer proof at the decision point. The captured Unwind PDP sells a detailed ingredient story at $12 but shows no star rating, no review count, and no testimonial anywhere on the page.",
+      "primary_change": "Add a review module (aggregate stars + count + 2-3 reviews) directly under the product title, seeded from existing customer feedback, with a verified-buyer badge.",
+      "primary_kpi": "PDP add-to-cart rate",
+      "decision_rule": "Ship if PDP add-to-cart rate improves without hurting PDP bounce rate.",
+      "expected_lift": "+6\u201312%",
+      "confidence": "76%"
+    },
+    {
+      "exp_id": "exp-zr-conv-moments",
+      "title": "Lead the homepage with moment cards",
+      "pillar": "Conversion",
+      "affected_surface": "Homepage hero",
+      "url": "https://zenrojas.com/",
+      "evidence": "screenshots/00-homepage.png",
+      "hypothesis": "CVR improves by promoting the existing Sleep / Immune / Energy / Digestion sections above the fold instead of a single vague \"Discover Your Ritual\" CTA. The captured homepage opens with a slideshow and one broad CTA, pushing the high-intent need cards far down the page.",
+      "primary_change": "Replace the hero CTA with four tappable moment cards (Sleep, Immune, Energy, Digestion), each linking to the matching product or collection.",
+      "primary_kpi": "Homepage click-through to product/collection",
+      "decision_rule": "Ship if homepage click-through improves without hurting downstream conversion rate.",
+      "expected_lift": "+5\u201310%",
+      "confidence": "72%"
+    },
+    {
+      "exp_id": "exp-zr-conv-waitlist",
+      "title": "Capture demand on sold-out variants",
+      "pillar": "Conversion",
+      "affected_surface": "PDP variant selector",
+      "url": "https://zenrojas.com/products/unwind",
+      "evidence": "content/01-pdp.md",
+      "hypothesis": "Recovered demand improves conversion by turning a stockout into an email capture instead of a dead end. The captured Unwind PDP shows a \"Sold Out\" variant with no back-in-stock or notify-me option, so high-intent shoppers who hit it simply leave.",
+      "primary_change": "Add a \"Notify me when back in stock\" email capture on sold-out variants, with an automated back-in-stock email.",
+      "primary_kpi": "Recovered-demand conversion (notify sign-up to purchase)",
+      "decision_rule": "Ship if recovered-demand conversion improves without hurting in-stock add-to-cart rate.",
+      "expected_lift": "+3\u20137%",
+      "confidence": "70%"
+    },
+    {
+      "exp_id": "exp-zr-aov-ritualkit",
+      "title": "Bundle a ritual starter kit",
+      "pillar": "AOV",
+      "affected_surface": "Teas collection + Sleep PDP cross-sell",
+      "url": "https://zenrojas.com/collections/teas",
+      "evidence": "content/00-homepage.md",
+      "hypothesis": "AOV rises by pairing a best-selling tea with the brewing essentials a new buyer needs. The captured homepage merchandises a Tea Infuser ($5), Mug ($8), and Tea Bags ($5) as standalone low-price SKUs with no guided pairing, so first-time buyers leave with tea and no easy way to brew it.",
+      "primary_change": "Create a \"Sleep Ritual Kit\" (Organic Sleep Tea + infuser + mug) at a modest bundle discount, merchandised on the teas collection and the Sleep PDP.",
+      "primary_kpi": "AOV among first-time buyers",
+      "decision_rule": "Ship if first-time AOV rises by \u2265$5 without hurting collection conversion.",
+      "expected_lift": "+7\u201313%",
+      "confidence": "70%"
+    },
+    {
+      "exp_id": "exp-zr-aov-threshold",
+      "title": "Surface the $35 threshold in the cart",
+      "pillar": "AOV",
+      "affected_surface": "Cart drawer",
+      "url": "https://zenrojas.com/cart",
+      "evidence": "content/01-pdp.md",
+      "hypothesis": "AOV rises by showing shoppers how close they are to the $35 financing/shipping threshold with a one-tap add. The captured PDP advertises \"Pay over time for orders over $35.00,\" but that threshold is invisible in the cart, so shoppers just under it get no nudge to add one more item.",
+      "primary_change": "Add a cart progress bar toward the $35 threshold with a one-tap suggested add-on (tea bag samplers from $2 or the $5 infuser).",
+      "primary_kpi": "AOV",
+      "decision_rule": "Ship if AOV rises without hurting cart-to-checkout rate.",
+      "expected_lift": "+4\u20139%",
+      "confidence": "71%"
+    },
+    {
+      "exp_id": "exp-zr-ret-subscribe",
+      "title": "Offer subscribe-and-save on consumable teas",
+      "pillar": "Retention",
+      "affected_surface": "Product detail page",
+      "url": "https://zenrojas.com/products/unwind",
+      "evidence": "content/01-pdp.md",
+      "hypothesis": "Repeat purchase rate improves by letting daily tea drinkers auto-replenish their staple. The captured Unwind PDP advertises ~15 cups (30g) per bag \u2014 a few weeks of daily use \u2014 but offers only one-time purchase, so loyal customers must remember to reorder.",
+      "primary_change": "Add a \"Subscribe & save 10%\" toggle on consumable tea PDPs with an editable delivery cadence.",
+      "primary_kpi": "90-day repeat purchase rate",
+      "decision_rule": "Ship if 90-day repeat purchase rate improves without hurting first-order conversion.",
+      "expected_lift": "+6\u201311%",
+      "confidence": "70%"
+    },
+    {
+      "exp_id": "exp-zr-ret-reorder",
+      "title": "Send a timed reorder reminder",
+      "pillar": "Retention",
+      "affected_surface": "Lifecycle email (new)",
+      "url": "https://zenrojas.com/products/unwind",
+      "evidence": "content/01-pdp.md",
+      "hypothesis": "Reorder rate improves by emailing a one-tap reorder timed to when a bag runs out. With ~15 cups per bag (captured on the Unwind PDP) and no replenishment prompt today, repeat demand depends entirely on the customer remembering the brand.",
+      "primary_change": "Trigger a reorder-reminder email ~21 days post-purchase with a pre-filled cart of the items previously bought.",
+      "primary_kpi": "30-day reorder rate",
+      "decision_rule": "Ship if 30-day reorder rate improves without hurting email unsubscribe rate.",
+      "expected_lift": "+5\u201310%",
+      "confidence": "68%"
+    },
+    {
+      "exp_id": "exp-zr-acq-schema",
+      "title": "Add product structured data",
+      "pillar": "Acquisition",
+      "affected_surface": "Homepage and PDP document head",
+      "url": "https://zenrojas.com/",
+      "evidence": "technical.json",
+      "hypothesis": "Organic acquisition improves by adding Product, Organization, and AggregateRating JSON-LD so listings qualify for rich results. The technical scan found no JSON-LD structured data on the homepage, so the store forfeits star ratings and price snippets in search.",
+      "primary_change": "Add Product/Organization JSON-LD to PDPs and the homepage, including review aggregate once the review module ships.",
+      "primary_kpi": "Organic search click-through rate",
+      "decision_rule": "Ship if organic CTR improves without hurting page load time.",
+      "expected_lift": "+4\u20138%",
+      "confidence": "68%"
+    },
+    {
+      "exp_id": "exp-zr-acq-quiz",
+      "title": "Build a 'find your tea' wellness quiz",
+      "pillar": "Acquisition",
+      "affected_surface": "New page at /pages/find-your-tea/",
+      "url": "https://zenrojas.com/pages/find-your-tea/ (new)",
+      "evidence": "screenshots/00-homepage.png",
+      "hypothesis": "Landing-page CVR improves by routing wellness-intent visitors to the matched tea before they self-navigate a 12-SKU range. The captured homepage already frames teas by moment (sleep, energy, digestion, immunity) but leaves shoppers to find the right one on their own.",
+      "primary_change": "Add a four-question wellness quiz that returns a recommended tea, the benefit rationale, and an add-to-cart; link it from the primary nav and homepage.",
+      "primary_kpi": "Quiz landing-page conversion rate",
+      "decision_rule": "Ship if quiz landing-page CVR improves without hurting site-wide conversion.",
+      "expected_lift": "+8\u201314%",
+      "confidence": "66%"
+    },
+    {
+      "exp_id": "exp-zr-perf-mobile",
+      "title": "Cut mobile image weight",
+      "pillar": "Performance",
+      "affected_surface": "Homepage and PDP imagery",
+      "url": "https://zenrojas.com/",
+      "evidence": "screenshots/00-homepage.png",
+      "hypothesis": "Bounce drops as mobile largest-contentful-paint improves. PageSpeed mobile scored 49 and the captured homepage ships multiple full-size CDN images (including .heic source files) above the fold, delaying first render on phones.",
+      "primary_change": "Serve responsive compressed WebP for hero and tile imagery, lazy-load below-fold media, and defer non-critical scripts.",
+      "primary_kpi": "Mobile LCP",
+      "decision_rule": "Ship if mobile LCP improves without hurting homepage click-through.",
+      "expected_lift": "+8\u201315%",
+      "confidence": "78%"
+    }
+  ],
+  "competitor_intro": "Competitors win the wellness-tea shopper through benefit-led navigation, symptom-specific discovery, and subscriptions. Zen Rojas's edge is a small, curated organic loose-leaf range, a founder-led story, and a direct customer relationship.",
+  "competitors": [
+    {
+      "competitor": "Pukka Herbs",
+      "domain": "pukkaherbs.com",
+      "positioning": "Organic herbal wellness tea",
+      "what_they_make_easier": "Benefit-led browsing (sleep, digestion, energy) across a broad range.",
+      "store_edge": "Smaller curated range with a founder story and a direct relationship.",
+      "pattern_to_adapt": "Clear benefit/intention filters and ritual bundles."
+    },
+    {
+      "competitor": "Traditional Medicinals",
+      "domain": "traditionalmedicinals.com",
+      "positioning": "Functional wellness teas by symptom",
+      "what_they_make_easier": "Symptom-specific shopping with strong trust cues.",
+      "store_edge": "Premium loose-leaf positioning and a modern, calmer brand.",
+      "pattern_to_adapt": "Symptom-led navigation plus subscription for repeat use."
+    },
+    {
+      "competitor": "Yogi Tea",
+      "domain": "yogiproducts.com",
+      "positioning": "Intention-based functional tea",
+      "what_they_make_easier": "Intention-led discovery and variety packs.",
+      "store_edge": "Organic loose-leaf focus and a smaller, curated catalog.",
+      "pattern_to_adapt": "Variety / sampler packs as a low-risk trial entry."
+    },
+    {
+      "competitor": "Rishi Tea",
+      "domain": "rishi-tea.com",
+      "positioning": "Organic loose-leaf and botanicals",
+      "what_they_make_easier": "Brewing education and origin storytelling.",
+      "store_edge": "Wellness-moment merchandising at an approachable price.",
+      "pattern_to_adapt": "Brew guides plus subscription for loose-leaf staples."
+    }
+  ],
+  "tech_checks": [
+    {
+      "name": "SSL Certificate",
+      "status": "Pass",
+      "detail": "HTTPS storefront loaded successfully."
+    },
+    {
+      "name": "HTTPS Redirect",
+      "status": "Pass",
+      "detail": "http:// 301-redirected to HTTPS."
+    },
+    {
+      "name": "Sitemap",
+      "status": "Pass",
+      "detail": "sitemap.xml present and well-formed."
+    },
+    {
+      "name": "Robots.txt",
+      "status": "Pass",
+      "detail": "robots.txt present."
+    },
+    {
+      "name": "Critical Pages Loading",
+      "status": "Pass",
+      "detail": "Homepage and /cart returned 200."
+    },
+    {
+      "name": "Meta Tags & Social Previews",
+      "status": "Pass",
+      "detail": "Title, meta description, and Open Graph tags present."
+    },
+    {
+      "name": "Structured Data",
+      "status": "Warn",
+      "detail": "No JSON-LD structured data found on the homepage."
+    },
+    {
+      "name": "Favicon",
+      "status": "Warn",
+      "detail": "No favicon at /favicon.ico (often theme-defined)."
+    },
+    {
+      "name": "Mobile-Friendly",
+      "status": "Pass",
+      "detail": "Responsive viewport meta tag present."
+    },
+    {
+      "name": "Page Speed Mobile",
+      "status": "Warn",
+      "detail": "PageSpeed Insights mobile performance score 49."
+    },
+    {
+      "name": "Page Speed Desktop",
+      "status": "Warn",
+      "detail": "PageSpeed Insights desktop performance score 79."
+    },
+    {
+      "name": "Broken Links",
+      "status": "Pass",
+      "detail": "No broken links among the homepage and /cart checks."
+    },
+    {
+      "name": "Image Optimization",
+      "status": "Warn",
+      "detail": "Byte-level image weight not measured in this pass."
+    },
+    {
+      "name": "Cookie/Privacy",
+      "status": "Warn",
+      "detail": "Privacy policy link present; consent mechanics not inspected."
+    },
+    {
+      "name": "Checkout Reachable",
+      "status": "Pass",
+      "detail": "/cart reachable (200)."
+    }
+  ]
+}

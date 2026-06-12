@@ -1,0 +1,17 @@
+{
+  "store_url": "https://broken.example",
+  "store_name": "Broken",
+  "title": "x",
+  "executive_summary": [
+    "only one paragraph"
+  ],
+  "experiments": [
+    {
+      "exp_id": "e1",
+      "title": "t",
+      "pillar": "Banana"
+    }
+  ],
+  "competitors": [],
+  "tech_checks": []
+}

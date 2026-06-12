@@ -1,0 +1,101 @@
+{
+  "source": "products_json",
+  "count": 12,
+  "products": [
+    {
+      "title": "Unwind Organic Tea",
+      "handle": "unwind",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/unwind"
+    },
+    {
+      "title": "Zen Rojas Mug 11oz",
+      "handle": "zen-rojas-mug",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/zen-rojas-mug"
+    },
+    {
+      "title": "Zen Rojas Loose Leaf Samplers",
+      "handle": "looseleafsamplers",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/looseleafsamplers"
+    },
+    {
+      "title": "Zen Rojas Tea Bag Samplers",
+      "handle": "teabagsamplers",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/teabagsamplers"
+    },
+    {
+      "title": "Tea Bags",
+      "handle": "tea-bags",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/tea-bags"
+    },
+    {
+      "title": "Zen Rojas E-giftcard",
+      "handle": "zen-rojas-e-giftcard",
+      "product_type": "E-giftcard",
+      "url": "https://zenrojas.com/products/zen-rojas-e-giftcard"
+    },
+    {
+      "title": "Organic Sleep Tea",
+      "handle": "organicsleeptea",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/organicsleeptea"
+    },
+    {
+      "title": "Organic Black Tea",
+      "handle": "blacktea",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/blacktea"
+    },
+    {
+      "title": "Tea Infuser",
+      "handle": "tea-seeper",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/tea-seeper"
+    },
+    {
+      "title": "Bodyguard Organic Tea",
+      "handle": "bodyguardtea",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/bodyguardtea"
+    },
+    {
+      "title": "Premium Sencha Organic Green Tea",
+      "handle": "premiumsenchagreentea",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/premiumsenchagreentea"
+    },
+    {
+      "title": "Heartburn Organic Tea",
+      "handle": "heartburntea",
+      "product_type": "",
+      "url": "https://zenrojas.com/products/heartburntea"
+    }
+  ],
+  "collections": [
+    {
+      "title": "Best Sellers",
+      "handle": "best-sellers"
+    },
+    {
+      "title": "Gift Cards",
+      "handle": "gift-cards"
+    },
+    {
+      "title": "Tea Essentials",
+      "handle": "tea-essentials"
+    },
+    {
+      "title": "Teas",
+      "handle": "teas"
+    },
+    {
+      "title": "Teaware",
+      "handle": "teaware"
+    }
+  ],
+  "notes": []
+}

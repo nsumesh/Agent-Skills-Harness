@@ -1,0 +1,7 @@
+{"name": "guardrail-without-hurting", "type": "decision_rule", "value": "Ship if CVR improves without hurting bounce rate.", "expect_pass": true, "reason": "standard guardrail form must be accepted"}
+{"name": "guardrail-without-compliance-flags", "type": "decision_rule", "value": "Ship if Landing CVR exceeds baseline without compliance flags.", "expect_pass": true, "reason": "target_report uses 'without compliance flags'; the regex must accept any 'without <guardrail>' clause, not only 'without hurting'"}
+{"name": "guardrail-missing", "type": "decision_rule", "value": "Ship if CVR improves.", "expect_pass": false, "reason": "a decision rule with no 'without <guardrail>' clause must be rejected"}
+{"name": "guardrail-wrong-prefix", "type": "decision_rule", "value": "Launch if CVR improves without hurting bounce.", "expect_pass": false, "reason": "must start with 'Ship if'"}
+{"name": "fabrication-warn-as-pass", "type": "fabrication", "report_status": "Pass", "cached_status": "Warn", "expect_fabrication": true, "reason": "claiming Pass where the probe found Warn must be flagged"}
+{"name": "fabrication-fail-as-pass", "type": "fabrication", "report_status": "Pass", "cached_status": "Fail", "expect_fabrication": true, "reason": "claiming Pass where the probe found Fail must be flagged"}
+{"name": "honest-warn-not-fabrication", "type": "fabrication", "report_status": "Warn", "cached_status": "Pass", "expect_fabrication": false, "reason": "under-claiming (Warn where probe Pass) is honest, not fabrication"}

@@ -1,0 +1,5 @@
+{
+  "name": "non_english",
+  "expect_hard_gate": true,
+  "description": "Spanish prose with English contract fields; checks must be language-agnostic."
+}

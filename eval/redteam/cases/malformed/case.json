@@ -1,0 +1,5 @@
+{
+  "name": "malformed",
+  "expect_hard_gate": false,
+  "description": "Broken structure: 1 experiment, bad pillar, missing fields, empty sections."
+}

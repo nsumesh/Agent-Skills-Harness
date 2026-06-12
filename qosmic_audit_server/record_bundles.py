@@ -1,9 +1,4 @@
-"""Live bundle recorder: crawl both calibration stores into ``eval/fixtures/bundles/``.
-
-Run via ``python -m qosmic_audit_server.record_bundles``. Makes live calls (Playwright +
-Firecrawl + PSI), so it's never imported by the offline test tier. The eval/loop read these
-cached bundles back offline.
-"""
+"""Crawl the calibration stores and write their artifact bundles to eval/fixtures/bundles/. Makes live network calls; never imported by offline tests."""
 
 from __future__ import annotations
 

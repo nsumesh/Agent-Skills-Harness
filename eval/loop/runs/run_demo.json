@@ -1,0 +1,46 @@
+{
+  "train_slug": "gingerpeople",
+  "holdout_slug": "zenrojas",
+  "agreement": 0.875,
+  "accepted_directives": [
+    "specific",
+    "calibrate"
+  ],
+  "baseline_trained": 0.785,
+  "baseline_holdout": 0.785,
+  "final_trained": 1.0,
+  "final_holdout": 1.0,
+  "holdout_delta": 0.215,
+  "trained_delta": 0.215,
+  "stopped_early": false,
+  "queue_baseline": 2,
+  "queue_final": 0,
+  "queue_low_agreement": 4,
+  "queue_high_agreement": 2,
+  "iterations": [
+    {
+      "iteration": 1,
+      "directive_added": "specific",
+      "trained_score": 0.925,
+      "holdout_score": 0.925,
+      "accepted": true,
+      "reason": "held-out 0.925 > 0.785, trained held"
+    },
+    {
+      "iteration": 2,
+      "directive_added": "calibrate",
+      "trained_score": 1.0,
+      "holdout_score": 1.0,
+      "accepted": true,
+      "reason": "held-out 1.000 > 0.925, trained held"
+    },
+    {
+      "iteration": 3,
+      "directive_added": "overfit",
+      "trained_score": 1.0,
+      "holdout_score": 0.0,
+      "accepted": false,
+      "reason": "rejected: held-out did not improve or trained regressed"
+    }
+  ]
+}

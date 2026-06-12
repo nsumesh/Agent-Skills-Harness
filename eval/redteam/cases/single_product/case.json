@@ -1,0 +1,5 @@
+{
+  "name": "single_product",
+  "expect_hard_gate": true,
+  "description": "Valid report against a single-product store; the eval must not penalize tiny catalogs."
+}

@@ -1,0 +1,5 @@
+{
+  "name": "empty",
+  "expect_hard_gate": false,
+  "description": "Valid report scored against an empty bundle; citations cannot resolve."
+}

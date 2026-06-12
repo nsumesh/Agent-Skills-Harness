@@ -1,10 +1,4 @@
-"""``crawl_storefront(url)`` — capture representative surfaces into a cached artifact bundle.
-
-The capture functions (screenshot via Playwright, content via Firecrawl) are injectable, so
-the offline tier exercises the manifest-assembly logic with a fake crawler over recorded
-HTML — no browser, no API. The manifest is honest: every surface we could not capture is
-listed under ``not_captured`` with a reason, never silently dropped.
-"""
+"""Capture representative surfaces into a cached artifact bundle and return its manifest. Capture functions are injectable so the offline tier can exercise manifest assembly without a browser or API."""
 
 from __future__ import annotations
 
@@ -28,7 +22,7 @@ class CaptureResult:
     text: str | None = None
 
 
-# --- default (live) capture functions; lazily import heavy deps -------------
+# Default live capture functions; lazily import heavy deps.
 
 def _default_screenshot(url: str, out_path: Path) -> CaptureResult:
     try:
@@ -60,7 +54,7 @@ def _default_content(url: str) -> CaptureResult:
             return CaptureResult(False, "firecrawl returned no markdown")
         except Exception as exc:  # noqa: BLE001
             return CaptureResult(False, f"firecrawl failed: {exc}")
-    # Fallback: raw page HTML via httpx (still real, just less clean than Firecrawl).
+    # Fall back to raw HTML when no Firecrawl key is set.
     resp = probes.fetch(url)
     if resp is not None and resp.status_code == 200 and resp.text:
         return CaptureResult(True, "raw HTML (no Firecrawl key)", text=resp.text)

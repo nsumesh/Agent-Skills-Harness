@@ -1,8 +1,4 @@
-"""``score_report(report_json, store_slug)`` — thin MCP wrapper over ``core.eval_api.score_report``.
-
-Loads the cached bundle for the slug and delegates. This is the second adapter onto the one
-eval implementation (the loop is the other), so an MCP-driven score equals a direct score.
-"""
+"""Thin MCP wrapper over core.eval_api.score_report; loads the cached bundle for the slug and delegates."""
 
 from __future__ import annotations
 

@@ -1,0 +1,90 @@
+{
+  "store_url": "https://zenrojas.com",
+  "slug": "zenrojas",
+  "platform": "shopify",
+  "catalog_branch": "products_json",
+  "catalog_source": "products_json",
+  "catalog_count": 12,
+  "reached_urls": [
+    {
+      "type": "homepage",
+      "url": "https://zenrojas.com/",
+      "status": 200,
+      "inspected": true
+    },
+    {
+      "type": "pdp",
+      "url": "https://zenrojas.com/products/unwind",
+      "status": 200,
+      "inspected": true
+    },
+    {
+      "type": "collection",
+      "url": "https://zenrojas.com/collections/best-sellers",
+      "status": 200,
+      "inspected": true
+    },
+    {
+      "type": "cart",
+      "url": "https://zenrojas.com/cart",
+      "status": 200,
+      "inspected": true
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "screenshot",
+      "surface": "homepage",
+      "url": "https://zenrojas.com/",
+      "path": "screenshots/00-homepage.png"
+    },
+    {
+      "type": "content",
+      "surface": "homepage",
+      "url": "https://zenrojas.com/",
+      "path": "content/00-homepage.md"
+    },
+    {
+      "type": "screenshot",
+      "surface": "pdp",
+      "url": "https://zenrojas.com/products/unwind",
+      "path": "screenshots/01-pdp.png"
+    },
+    {
+      "type": "content",
+      "surface": "pdp",
+      "url": "https://zenrojas.com/products/unwind",
+      "path": "content/01-pdp.md"
+    },
+    {
+      "type": "screenshot",
+      "surface": "collection",
+      "url": "https://zenrojas.com/collections/best-sellers",
+      "path": "screenshots/02-collection.png"
+    },
+    {
+      "type": "content",
+      "surface": "collection",
+      "url": "https://zenrojas.com/collections/best-sellers",
+      "path": "content/02-collection.md"
+    },
+    {
+      "type": "screenshot",
+      "surface": "cart",
+      "url": "https://zenrojas.com/cart",
+      "path": "screenshots/03-cart.png"
+    },
+    {
+      "type": "content",
+      "surface": "cart",
+      "url": "https://zenrojas.com/cart",
+      "path": "content/03-cart.md"
+    }
+  ],
+  "not_captured": [],
+  "counts": {
+    "surfaces": 4,
+    "artifacts": 8,
+    "not_captured": 0
+  }
+}
