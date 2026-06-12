@@ -1,7 +1,7 @@
-# Qosmic CRO Audit Harness
+# Qosmic Audit Harness
 
 A runtime harness that turns a coding agent (Claude Code, Codex, or anything similar) into a
-storefront CRO auditor, plus the eval system that grades its reports and a loop that improves the
+storefront auditor, plus the eval system that grades its reports and a loop that improves the
 writer over time. Built for any Shopify store, calibrated against `target_report.md`.
 
 ## What it does
