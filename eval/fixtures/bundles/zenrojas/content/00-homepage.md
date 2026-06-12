@@ -174,6 +174,15 @@ _Proudly Veteran-Owned and family operated \| Crafted with Intention \| Rooted i
 
 ## Blog
 
+[**Building a Family Legacy Through Wellness, Community, and Purpose-Driven Growth**\\
+\\
+\\
+Building a family legacy through wellness and community is at the core of who we are. Take a moment to learn more about our journey. A special thank you to...\\
+\\
+\\
+\\
+Read more](https://zenrojas.com/blogs/weekly-blog/building-a-family-legacy-through-wellness-community-and-purpose-driven-growth)
+
 [**Curious about the people behind Zen Rojas?**\\
 \\
 \\
@@ -191,15 +200,6 @@ We have had the pleasure to be featured in Voyage Houston Magazine! Click here t
 \\
 \\
 Read more](https://zenrojas.com/blogs/weekly-blog/meet-jesse-rojas-of-zen-rojas)
-
-[**Sleepy Mocktail**\\
-\\
-\\
-Night cap anyone? Relaxing, refreshing, perfect! Ingredients: 1/2 cup Sleep Tea cooled 1/2 tsp honey 1 pinch pink Himalayan salt 1/2 cup tart cherry juice club soda 1 lime twist...\\
-\\
-\\
-\\
-Read more](https://zenrojas.com/blogs/weekly-blog/sleepy-mocktail)
 
 [View all](https://zenrojas.com/blogs/weekly-blog)
 
@@ -246,23 +246,6 @@ Checkout
 
 - Choosing a selection results in a full page refresh.
 - Press the space key then arrow keys to make a selection.
-
-shop.app
-
-# shop.app is blocked
-
-This page has been blocked by an extension
-
-- Try disabling your extensions.
-
-ERR\_BLOCKED\_BY\_CLIENT
-
-Reload
-
-
-This page has been blocked by an extension
-
-![](<Base64-Image-Removed>)![](<Base64-Image-Removed>)
 
 zenrojas.com
 

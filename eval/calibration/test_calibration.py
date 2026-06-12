@@ -15,6 +15,7 @@ from eval.calibration.calibrate import (
 )
 from eval.judge.fake import FakeAnthropic
 from eval.judge.judge import run_judge
+from eval.judge.rubrics import RUBRIC_VERSION
 
 KNOWN_GOOD = json.loads((config.REPORTS_DIR / "target_report.json").read_text())
 LABELS = json.loads((config.REPO_ROOT / "eval" / "calibration" / "labels.json").read_text())
@@ -57,5 +58,5 @@ def test_calibration_state_links_escalation_to_agreement(tmp_path):
     agreement, _ = compute_agreement(_judge, KNOWN_GOOD, BUNDLE, LABELS)
     state = write_state(agreement, len(LABELS["items"]), tmp_path / "calibration_state.json", judge_source="fake_offline")
     assert state["escalation_threshold"] == state["agreement"] == round(agreement, 4)
-    assert state["rubric_version"] == "v1"
+    assert state["rubric_version"] == RUBRIC_VERSION
     assert state["n_items"] == len(LABELS["items"])

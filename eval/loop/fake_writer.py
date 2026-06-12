@@ -49,11 +49,13 @@ class FakeWriterAnthropic:
 
     @classmethod
     def from_samples(cls) -> FakeWriterAnthropic:
+        # Stable known-goods, NOT the (auto-generated, mutable) sample outputs: the parsed
+        # production target for gingerpeople, and a committed base for zenrojas.
         from eval import config
 
         bases = {
-            slug: json.loads((config.SAMPLE_OUTPUT / slug / "report.json").read_text())
-            for slug in ("zenrojas", "gingerpeople")
+            "gingerpeople": json.loads((config.REPORTS_DIR / "target_report.json").read_text()),
+            "zenrojas": json.loads((config.REPORTS_DIR / "base_zenrojas.json").read_text()),
         }
         return cls(bases)
 

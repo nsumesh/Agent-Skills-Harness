@@ -11,9 +11,10 @@ RUBRIC_VERSION = "v1"
 # Blend used once the judge runs (Phase 5+). Must sum to 1.0.
 WEIGHTS = {
     "deterministic": 0.35,
-    "groundedness": 0.30,
-    "specificity": 0.20,
-    "calibration": 0.15,
+    "groundedness": 0.25,
+    "specificity": 0.15,
+    "calibration": 0.10,
+    "surface_specificity": 0.15,
 }
 
 PASS_THRESHOLD = 0.70  # combined_score at/above which a report is "good enough"

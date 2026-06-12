@@ -14,7 +14,7 @@
     },
     {
       "type": "pdp",
-      "url": "https://gingerpeople.com/products/",
+      "url": "https://gingerpeople.com/products/gin-gins-ginger-spice-drops/",
       "status": 200,
       "inspected": true
     },
@@ -41,13 +41,13 @@
     {
       "type": "screenshot",
       "surface": "pdp",
-      "url": "https://gingerpeople.com/products/",
+      "url": "https://gingerpeople.com/products/gin-gins-ginger-spice-drops/",
       "path": "screenshots/01-pdp.png"
     },
     {
       "type": "content",
       "surface": "pdp",
-      "url": "https://gingerpeople.com/products/",
+      "url": "https://gingerpeople.com/products/gin-gins-ginger-spice-drops/",
       "path": "content/01-pdp.md"
     },
     {

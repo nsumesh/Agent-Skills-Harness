@@ -114,4 +114,15 @@ def _heuristic(dimension: str, report: dict) -> tuple[float, list[str]]:
         # One overconfident new page is enough to pull the dimension score down.
         return max(0.2, 1.0 - 0.5 * miscalibrated), per
 
+    if dimension == "surface_specificity":
+        terms = ("pdp", "product", "cart", "collection", "page", "hero", "checkout",
+                 "search", "blog", "grid", "nav", "detail", "homepage")
+        per, total = [], 0.0
+        for e in experiments:
+            surface = f"{e.get('affected_surface', '')} {e.get('url', '')}".lower()
+            anchored = any(t in surface for t in terms)
+            total += 1.0 if anchored else 0.3
+            per.append(f"{e.get('exp_id')}: {'anchored' if anchored else 'generic'}")
+        return total / len(experiments), per
+
     return 1.0, []

@@ -22,11 +22,13 @@ def _load(path: Path) -> dict:
 
 
 @pytest.mark.parametrize("key", list(KNOWN_GOOD))
-def test_all_seven_checks_pass_on_known_goods(key):
+def test_all_hard_gates_pass_on_known_goods(key):
     report_path, bundle = KNOWN_GOOD[key]
     results = checks.run_deterministic(_load(report_path), bundle)
-    failed = [c.name for c in results if not c.passed]
-    assert not failed, f"{key} unexpectedly failed: {failed}"
+    # Hard gates define validity; soft checks (competitor plausibility, evidence diversity) are
+    # quality nudges a valid report may still trip.
+    failed = [c.name for c in results if c.severity == "hard" and not c.passed]
+    assert not failed, f"{key} unexpectedly failed a hard gate: {failed}"
 
 
 def _results(report, bundle):

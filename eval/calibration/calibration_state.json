@@ -1,8 +1,8 @@
 {
-  "agreement": 0.875,
-  "escalation_threshold": 0.875,
+  "agreement": 0.9,
+  "escalation_threshold": 0.9,
   "pass_threshold": 0.7,
-  "rubric_version": "v1",
-  "n_items": 8,
+  "rubric_version": "v2",
+  "n_items": 10,
   "judge_source": "anthropic"
 }

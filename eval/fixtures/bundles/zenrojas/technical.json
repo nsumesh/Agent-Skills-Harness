@@ -47,12 +47,12 @@
   {
     "name": "Page Speed Mobile",
     "status": "Warn",
-    "detail": "PageSpeed Insights mobile performance score 49."
+    "detail": "PageSpeed Insights mobile performance score 72."
   },
   {
     "name": "Page Speed Desktop",
     "status": "Warn",
-    "detail": "PageSpeed Insights desktop performance score 79."
+    "detail": "PageSpeed Insights desktop performance score 63."
   },
   {
     "name": "Broken Links",

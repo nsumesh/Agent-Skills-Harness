@@ -60,6 +60,19 @@ def overconfident_new_page(report: dict) -> dict:
     return r
 
 
+def eleven_experiments(report: dict) -> dict:
+    r = _clone(report)
+    r["experiments"].append(copy.deepcopy(r["experiments"][0]))  # 11 -> exactly_ten fails
+    return r
+
+
+def single_pillar(report: dict) -> dict:
+    r = _clone(report)
+    for e in r["experiments"]:
+        e["pillar"] = "Conversion"  # all one pillar -> pillar_floor fails
+    return r
+
+
 ABLATIONS = {
     "drop_to_nine": drop_to_nine,
     "drop_a_pillar": drop_a_pillar,
@@ -68,6 +81,8 @@ ABLATIONS = {
     "strip_guardrail": strip_guardrail,
     "vague_hypothesis": vague_hypothesis,
     "overconfident_new_page": overconfident_new_page,
+    "eleven_experiments": eleven_experiments,
+    "single_pillar": single_pillar,
 }
 
 

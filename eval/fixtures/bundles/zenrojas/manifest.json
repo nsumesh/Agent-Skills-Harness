@@ -14,7 +14,7 @@
     },
     {
       "type": "pdp",
-      "url": "https://zenrojas.com/products/unwind",
+      "url": "https://zenrojas.com/products/zen-rojas-mug",
       "status": 200,
       "inspected": true
     },
@@ -47,13 +47,13 @@
     {
       "type": "screenshot",
       "surface": "pdp",
-      "url": "https://zenrojas.com/products/unwind",
+      "url": "https://zenrojas.com/products/zen-rojas-mug",
       "path": "screenshots/01-pdp.png"
     },
     {
       "type": "content",
       "surface": "pdp",
-      "url": "https://zenrojas.com/products/unwind",
+      "url": "https://zenrojas.com/products/zen-rojas-mug",
       "path": "content/01-pdp.md"
     },
     {

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-RUBRIC_VERSION = "v1"
+RUBRIC_VERSION = "v2"
 
 COMMON = (
     "You are a meticulous conversion-rate-optimization (CRO) audit reviewer. You are given the "
@@ -35,5 +35,13 @@ RUBRICS = {
         "brand-new pages or net-new content should be lower-confidence. Penalize overconfident "
         "new pages and under-confident obvious fixes. 1.0 = confidence well-calibrated to risk; "
         "0.0 = confidence unrelated to risk."
+    ),
+    "surface_specificity": (
+        "DIMENSION = surface_specificity. Score how precisely each experiment is anchored to a "
+        "concrete captured surface and names a specific missing element — e.g. 'the GIN GINS PDP "
+        "shows reviews but no add-to-cart' beats 'improve the homepage'. Reward experiments tied to "
+        "a real PDP / cart / collection / named page with a concrete module to add or change; "
+        "penalize ones aimed at vague, sitewide, or generic 'the homepage' targets. 1.0 = every "
+        "experiment names a real surface and a concrete change; 0.0 = generic and unanchored."
     ),
 }

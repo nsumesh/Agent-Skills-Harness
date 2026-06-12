@@ -67,19 +67,25 @@ reason, write — using these tools:
 The output lands in `sample_output/<slug>/report.md` (also `.html` and `.json`). To capture the
 artifact bundles up front, run `python -m qosmic_audit_server.record_bundles`.
 
+The harness can also drive the whole thing itself: `python -m qosmic_audit_server.audit` crawls each
+store live, has the writer draft a report from the cached bundle, runs a critic loop that re-prompts
+on any deterministic failure until the gate is clean, and overwrites `sample_output/`. That's how the
+two sample reports in this repo are produced — they're an output of the harness, not hand-written.
+
 ## The eval and the loop
 
 The eval scores any report for any store, cheapest checks first:
 
 1. **Deterministic gate** — sections present, exactly 10 experiments, all fields, all five pillars,
-   every citation resolves, and no fabricated passes. Fail any hard check and the score is 0; the
-   judge never runs.
-2. **LLM judge** — three rubrics (groundedness, specificity, calibration) over the captured text.
+   every citation resolves, and no fabricated passes, plus a soft **evidence-diversity** check that
+   citations spread across distinct surfaces. Fail any hard check and the score is 0; the judge never runs.
+2. **LLM judge** — four rubrics (groundedness, specificity, calibration, surface-specificity) over
+   the captured text.
 3. **Escalation** — low-confidence judgements get a self-consistency pass; whatever's still
    uncertain goes to a human queue that shrinks as the system gets more trustworthy.
 
-The judge is calibrated against a known-good report plus seven deliberate ablations. Measured
-judge-vs-human agreement is **0.875 (n=8)** — reported with its sample size, not asserted. That
+The judge is calibrated against a known-good report plus nine deliberate ablations. Measured
+judge-vs-human agreement is **0.90 (n=10)** — reported with its sample size, not asserted. That
 number is written to `eval/calibration/calibration_state.json` and used as the loop's escalation
 threshold.
 
@@ -122,7 +128,7 @@ generalization test.
 - `make loop` uses a deterministic stand-in writer so the headline is reproducible. The real
   Anthropic writer is wired up in `eval/loop/writer.py` (drop `--fake-writer` to use it).
 - A few deliberate scope cuts — a greedy optimizer rather than a population search, 3-sample
-  escalation rather than a second model, a ~9-item calibration set — are written up in `AGENT_LOG.md`
+  escalation rather than a second model, a 10-item calibration set — are written up in `AGENT_LOG.md`
   and `EVAL_LOOP.md`.
 
 ## More docs

@@ -6,12 +6,6 @@
       "url": "https://gingerpeople.com/products/"
     },
     {
-      "url": "https://gingerpeople.com/products/ginger-soother-elderberry-gingerade/"
-    },
-    {
-      "url": "https://gingerpeople.com/products/ginger-soother-extra-strength-gingerade/"
-    },
-    {
       "url": "https://gingerpeople.com/products/gin-gins-mandarin-orange-ginger-chews/"
     },
     {
@@ -37,12 +31,6 @@
     },
     {
       "url": "https://gingerpeople.com/products/fiji-ginger-juice/"
-    },
-    {
-      "url": "https://gingerpeople.com/products/fiji-turmeric-juice/"
-    },
-    {
-      "url": "https://gingerpeople.com/products/turmeric-juice/"
     },
     {
       "url": "https://gingerpeople.com/products/ginger-juice-non-gmo/"
@@ -87,9 +75,6 @@
       "url": "https://gingerpeople.com/products/ginger-rescue-ginger-shots-turmeric/"
     },
     {
-      "url": "https://gingerpeople.com/products/ginger-soother-turmeric-gingerade/"
-    },
-    {
       "url": "https://gingerpeople.com/products/turmeric-latte-mix/"
     },
     {
@@ -108,16 +93,10 @@
       "url": "https://gingerpeople.com/products/ginger-sesame-sauce/"
     },
     {
-      "url": "https://gingerpeople.com/products/ginger-soother-lemon-honey-gingerade/"
-    },
-    {
       "url": "https://gingerpeople.com/products/ginger-rescue-soft-ginger-lozenges/"
     },
     {
       "url": "https://gingerpeople.com/products/ginger-rescue-hard-ginger-lozenges/"
-    },
-    {
-      "url": "https://gingerpeople.com/products/gin-gins-original-ginger-chews/"
     },
     {
       "url": "https://gingerpeople.com/products/gin-gins-boost-red-magic-ginger-chews/"
@@ -133,6 +112,27 @@
     },
     {
       "url": "https://gingerpeople.com/products/gourmet-ginger-spread/"
+    },
+    {
+      "url": "https://gingerpeople.com/products/ginger-soother-elderberry-gingerade/"
+    },
+    {
+      "url": "https://gingerpeople.com/products/ginger-soother-extra-strength-gingerade/"
+    },
+    {
+      "url": "https://gingerpeople.com/products/ginger-soother-lemon-honey-gingerade/"
+    },
+    {
+      "url": "https://gingerpeople.com/products/ginger-soother-turmeric-gingerade/"
+    },
+    {
+      "url": "https://gingerpeople.com/products/turmeric-juice/"
+    },
+    {
+      "url": "https://gingerpeople.com/products/fiji-turmeric-juice/"
+    },
+    {
+      "url": "https://gingerpeople.com/products/gin-gins-original-ginger-chews/"
     }
   ],
   "collections": [],

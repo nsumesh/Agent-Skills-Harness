@@ -45,4 +45,4 @@ def test_judge_runs_only_after_the_gate_passes():
     assert not sr.hard_gate_passed and calls["n"] == 0
 
     sr_ok = score_report(_zen(), config.bundle_dir("zenrojas"), judge=judge)
-    assert sr_ok.hard_gate_passed and calls["n"] == 1 and len(sr_ok.judge) == 3
+    assert sr_ok.hard_gate_passed and calls["n"] == 1 and len(sr_ok.judge) == len(RUBRICS)

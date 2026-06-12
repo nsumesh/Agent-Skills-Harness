@@ -11,6 +11,8 @@
     { "name": "fake_a_pass", "good": false, "target": { "type": "gate", "check": "fabrication_detection" } },
     { "name": "strip_guardrail", "good": false, "target": { "type": "gate", "check": "all_fields" } },
     { "name": "vague_hypothesis", "good": false, "target": { "type": "dimension", "dimension": "specificity" } },
-    { "name": "overconfident_new_page", "good": false, "target": { "type": "dimension", "dimension": "calibration" } }
+    { "name": "overconfident_new_page", "good": false, "target": { "type": "dimension", "dimension": "calibration" } },
+    { "name": "eleven_experiments", "good": false, "target": { "type": "gate", "check": "exactly_ten" } },
+    { "name": "single_pillar", "good": false, "target": { "type": "gate", "check": "pillar_floor" } }
   ]
 }

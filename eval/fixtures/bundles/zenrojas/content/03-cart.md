@@ -32,23 +32,6 @@ This page has been blocked by an extension
 
 ![](<Base64-Image-Removed>)![](<Base64-Image-Removed>)
 
-shop.app
-
-# shop.app is blocked
-
-This page has been blocked by an extension
-
-- Try disabling your extensions.
-
-ERR\_BLOCKED\_BY\_CLIENT
-
-Reload
-
-
-This page has been blocked by an extension
-
-![](<Base64-Image-Removed>)![](<Base64-Image-Removed>)
-
 Chat
 
 cdn.one.store

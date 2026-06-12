@@ -3,170 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zen Rojas audit — a clear wellness story the product pages don&#39;t close</title>
+<title>Zen Rojas CRO Audit Report</title>
 </head>
 <body>
-<h1>Zen Rojas audit — a clear wellness story the product pages don&#39;t close</h1>
+<h1>Zen Rojas CRO Audit Report</h1>
 <h2>Executive summary</h2>
-<p>**Zen Rojas has a sharp wellness story; the product pages don&#39;t close it.** The storefront merchandises teas by moment — Sleep &amp; Relaxation, Immune Support, Daily Energy, Digestion — and the Unwind PDP sells a detailed, ingredient-led story at $12. But the captured product page carries no star rating, no review count, and a &#34;Sold Out&#34; variant with no notify-me path, so a first-time buyer of a wellness tea gets benefits but no peer proof and a dead end on stockouts.</p><p>**The catalog is small and consumable — built for repeat revenue it isn&#39;t capturing.** With ~12 SKUs and ~15 cups per bag, tea here is a monthly consumable, yet PDPs offer only one-time purchase and there is no reorder prompt or subscribe option. The brewing essentials (infuser $5, mug $8, tea bags $5) are merchandised separately with no guided pairing, leaving both repeat revenue and basket size on the table.</p><p>**Mobile speed and discovery are the cheapest early wins.** PageSpeed mobile scored 49 against an image-heavy homepage, and the strong moment framing is buried beneath a slideshow and a single vague &#34;Discover Your Ritual&#34; CTA. The first test should be structural: add proof to the PDP and promote the moment cards, then layer in subscriptions and a speed fix.</p><h2>Proposed experiments</h2>
+<p>**Zen Rojas has a clear brand identity and a focused organic tea catalog, but conversion is being left on the table due to missing social proof, weak urgency signals, and an underdeveloped product detail page experience.** The homepage communicates a calming wellness narrative effectively, yet no customer reviews, star ratings, or user-generated content appear anywhere in the captured surfaces — a critical trust gap for a consumable product where taste and efficacy are purchase barriers.</p><p>**Average order value is constrained by a sampler-led entry point that lacks structured upsell pathways beyond a single &#39;frequently bought together&#39; bundle on the mug PDP.** With 12 SKUs spanning teas, teaware, and samplers, the store has the raw ingredients for meaningful cross-sell and bundle mechanics, but the collection and cart pages show no recommended pairings, no tiered free-shipping threshold messaging, and no loyalty or subscription nudge.</p><p>**Technical performance scores of 72 (mobile) and 63 (desktop) represent a measurable drag on paid acquisition efficiency and organic ranking potential.** Combined with the absence of JSON-LD structured data on the homepage, the store is underserving both search engines and performance-sensitive shoppers — issues that are structurally fixable on Shopify and should be prioritized alongside conversion experiments.</p><h2>Proposed experiments</h2>
 <section class="experiment">
-<h3>exp-zr-conv-reviews — Add a review module to product pages</h3>
+<h3>EXP-01 — Add Star Ratings + Review Count Below PDP Product Title</h3>
 <ul>
 <li><strong>Pillar:</strong> Conversion</li>
-<li><strong>Affected surface:</strong> Product detail page (pattern applies to all PDPs)</li>
-<li><strong>URL:</strong> https://zenrojas.com/products/unwind</li>
-<li><strong>Evidence:</strong> screenshots/01-pdp.png</li>
-<li><strong>Hypothesis:</strong> CVR improves by placing ratings and reviews next to the price so first-time wellness-tea buyers have peer proof at the decision point. The captured Unwind PDP sells a detailed ingredient story at $12 but shows no star rating, no review count, and no testimonial anywhere on the page.</li>
-<li><strong>Primary change:</strong> Add a review module (aggregate stars + count + 2-3 reviews) directly under the product title, seeded from existing customer feedback, with a verified-buyer badge.</li>
-<li><strong>Primary KPI:</strong> PDP add-to-cart rate</li>
-<li><strong>Decision rule:</strong> Ship if PDP add-to-cart rate improves without hurting PDP bounce rate.</li>
-<li><strong>Expected lift:</strong> +6–12%</li>
-<li><strong>Confidence:</strong> 76%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-zr-conv-moments — Lead the homepage with moment cards</h3>
-<ul>
-<li><strong>Pillar:</strong> Conversion</li>
-<li><strong>Affected surface:</strong> Homepage hero</li>
-<li><strong>URL:</strong> https://zenrojas.com/</li>
-<li><strong>Evidence:</strong> screenshots/00-homepage.png</li>
-<li><strong>Hypothesis:</strong> CVR improves by promoting the existing Sleep / Immune / Energy / Digestion sections above the fold instead of a single vague &#34;Discover Your Ritual&#34; CTA. The captured homepage opens with a slideshow and one broad CTA, pushing the high-intent need cards far down the page.</li>
-<li><strong>Primary change:</strong> Replace the hero CTA with four tappable moment cards (Sleep, Immune, Energy, Digestion), each linking to the matching product or collection.</li>
-<li><strong>Primary KPI:</strong> Homepage click-through to product/collection</li>
-<li><strong>Decision rule:</strong> Ship if homepage click-through improves without hurting downstream conversion rate.</li>
-<li><strong>Expected lift:</strong> +5–10%</li>
-<li><strong>Confidence:</strong> 72%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-zr-conv-waitlist — Capture demand on sold-out variants</h3>
-<ul>
-<li><strong>Pillar:</strong> Conversion</li>
-<li><strong>Affected surface:</strong> PDP variant selector</li>
-<li><strong>URL:</strong> https://zenrojas.com/products/unwind</li>
+<li><strong>Affected surface:</strong> Product Detail Page — Zen Rojas Mug 11oz</li>
+<li><strong>URL:</strong> https://zenrojas.com/products/zen-rojas-mug</li>
 <li><strong>Evidence:</strong> content/01-pdp.md</li>
-<li><strong>Hypothesis:</strong> Recovered demand improves conversion by turning a stockout into an email capture instead of a dead end. The captured Unwind PDP shows a &#34;Sold Out&#34; variant with no back-in-stock or notify-me option, so high-intent shoppers who hit it simply leave.</li>
-<li><strong>Primary change:</strong> Add a &#34;Notify me when back in stock&#34; email capture on sold-out variants, with an automated back-in-stock email.</li>
-<li><strong>Primary KPI:</strong> Recovered-demand conversion (notify sign-up to purchase)</li>
-<li><strong>Decision rule:</strong> Ship if recovered-demand conversion improves without hurting in-stock add-to-cart rate.</li>
-<li><strong>Expected lift:</strong> +3–7%</li>
-<li><strong>Confidence:</strong> 70%</li>
+<li><strong>Hypothesis:</strong> Displaying a star rating and review count directly beneath the product title will reduce purchase hesitation by providing third-party social proof at the moment of evaluation. The current PDP for the Zen Rojas Mug 11oz contains zero reviews or ratings despite listing a $8.00 price and a 30-Day Warranty claim.</li>
+<li><strong>Primary change:</strong> Integrate a reviews app (e.g., Judge.me or Loox) and render aggregate star rating + review count (e.g., &#39;4.8 ★ · 47 reviews&#39;) immediately below the H1 product title on all PDPs.</li>
+<li><strong>Primary KPI:</strong> PDP Add-to-Cart rate</li>
+<li><strong>Decision rule:</strong> Ship if PDP Add-to-Cart rate improves by ≥5% without hurting average session duration.</li>
+<li><strong>Expected lift:</strong> +9-16%</li>
+<li><strong>Confidence:</strong> 82%</li>
 </ul>
 </section>
 <section class="experiment">
-<h3>exp-zr-aov-ritualkit — Bundle a ritual starter kit</h3>
+<h3>EXP-02 — Introduce Free Shipping Threshold Progress Bar in Cart</h3>
 <ul>
 <li><strong>Pillar:</strong> AOV</li>
-<li><strong>Affected surface:</strong> Teas collection + Sleep PDP cross-sell</li>
-<li><strong>URL:</strong> https://zenrojas.com/collections/teas</li>
-<li><strong>Evidence:</strong> content/00-homepage.md</li>
-<li><strong>Hypothesis:</strong> AOV rises by pairing a best-selling tea with the brewing essentials a new buyer needs. The captured homepage merchandises a Tea Infuser ($5), Mug ($8), and Tea Bags ($5) as standalone low-price SKUs with no guided pairing, so first-time buyers leave with tea and no easy way to brew it.</li>
-<li><strong>Primary change:</strong> Create a &#34;Sleep Ritual Kit&#34; (Organic Sleep Tea + infuser + mug) at a modest bundle discount, merchandised on the teas collection and the Sleep PDP.</li>
-<li><strong>Primary KPI:</strong> AOV among first-time buyers</li>
-<li><strong>Decision rule:</strong> Ship if first-time AOV rises by ≥$5 without hurting collection conversion.</li>
-<li><strong>Expected lift:</strong> +7–13%</li>
-<li><strong>Confidence:</strong> 70%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-zr-aov-threshold — Surface the $35 threshold in the cart</h3>
-<ul>
-<li><strong>Pillar:</strong> AOV</li>
-<li><strong>Affected surface:</strong> Cart drawer</li>
+<li><strong>Affected surface:</strong> Cart Page</li>
 <li><strong>URL:</strong> https://zenrojas.com/cart</li>
-<li><strong>Evidence:</strong> content/01-pdp.md</li>
-<li><strong>Hypothesis:</strong> AOV rises by showing shoppers how close they are to the $35 financing/shipping threshold with a one-tap add. The captured PDP advertises &#34;Pay over time for orders over $35.00,&#34; but that threshold is invisible in the cart, so shoppers just under it get no nudge to add one more item.</li>
-<li><strong>Primary change:</strong> Add a cart progress bar toward the $35 threshold with a one-tap suggested add-on (tea bag samplers from $2 or the $5 infuser).</li>
-<li><strong>Primary KPI:</strong> AOV</li>
-<li><strong>Decision rule:</strong> Ship if AOV rises without hurting cart-to-checkout rate.</li>
-<li><strong>Expected lift:</strong> +4–9%</li>
+<li><strong>Evidence:</strong> content/03-cart.md</li>
+<li><strong>Hypothesis:</strong> A dynamic progress bar showing how close the shopper is to a free shipping threshold (e.g., &#39;Add $7 more for free shipping&#39;) will motivate cart additions before checkout. The current cart page captured at /cart shows only a subtotal, a discount field, and a checkout button with no AOV-lifting incentive messaging.</li>
+<li><strong>Primary change:</strong> Add a free-shipping progress bar component to the cart drawer and cart page, set at a threshold of $35 (aligned with the existing &#39;Pay over time for orders over $35&#39; messaging already on the PDP).</li>
+<li><strong>Primary KPI:</strong> Average Order Value</li>
+<li><strong>Decision rule:</strong> Ship if AOV increases by ≥$3 without hurting cart-to-checkout conversion rate.</li>
+<li><strong>Expected lift:</strong> +8-13%</li>
+<li><strong>Confidence:</strong> 79%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-03 — Add Email Capture Pop-up with First-Order Discount for Retention Seeding</h3>
+<ul>
+<li><strong>Pillar:</strong> Retention</li>
+<li><strong>Affected surface:</strong> Homepage</li>
+<li><strong>URL:</strong> https://zenrojas.com</li>
+<li><strong>Evidence:</strong> content/00-homepage.md</li>
+<li><strong>Hypothesis:</strong> Capturing email addresses at the homepage level with a 10%-off first-order incentive will build a retargetable subscriber list and increase repeat purchase rates via post-purchase flows. The homepage currently has no visible email capture mechanism, newsletter sign-up, or loyalty program entry point in the captured content.</li>
+<li><strong>Primary change:</strong> Deploy a timed exit-intent or scroll-triggered pop-up offering 10% off the first order in exchange for email opt-in; connect to a Klaviyo welcome + post-purchase automation sequence.</li>
+<li><strong>Primary KPI:</strong> Email capture rate / 90-day repeat purchase rate</li>
+<li><strong>Decision rule:</strong> Ship if email capture rate exceeds 3% without increasing bounce rate on the homepage.</li>
+<li><strong>Expected lift:</strong> +10-18%</li>
+<li><strong>Confidence:</strong> 74%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-04 — Surface Benefit-Led Category Tiles on the Best Sellers Collection Page</h3>
+<ul>
+<li><strong>Pillar:</strong> Conversion</li>
+<li><strong>Affected surface:</strong> Best Sellers Collection Page</li>
+<li><strong>URL:</strong> https://zenrojas.com/collections/best-sellers</li>
+<li><strong>Evidence:</strong> content/02-collection.md</li>
+<li><strong>Hypothesis:</strong> Adding short benefit callouts (e.g., &#39;Calms in 20 min&#39;, &#39;Antioxidant-rich&#39;) beneath product titles on the Best Sellers collection grid will increase click-through to PDPs by helping shoppers self-select based on need. The current Best Sellers collection page shows only product name and price with no benefit copy, ingredient highlights, or use-case labels.</li>
+<li><strong>Primary change:</strong> Add a one-line benefit subtitle (max 8 words) beneath each product title on the collection grid cards, drawn from existing PDP copy.</li>
+<li><strong>Primary KPI:</strong> Collection-to-PDP click-through rate</li>
+<li><strong>Decision rule:</strong> Ship if collection-to-PDP CTR improves by ≥8% without hurting overall collection page bounce rate.</li>
+<li><strong>Expected lift:</strong> +8-14%</li>
 <li><strong>Confidence:</strong> 71%</li>
 </ul>
 </section>
 <section class="experiment">
-<h3>exp-zr-ret-subscribe — Offer subscribe-and-save on consumable teas</h3>
+<h3>EXP-05 — Implement JSON-LD Product Structured Data on All PDPs for Rich Snippet Acquisition</h3>
+<ul>
+<li><strong>Pillar:</strong> Acquisition</li>
+<li><strong>Affected surface:</strong> Homepage and all PDPs</li>
+<li><strong>URL:</strong> https://zenrojas.com</li>
+<li><strong>Evidence:</strong> technical.json</li>
+<li><strong>Hypothesis:</strong> Adding JSON-LD structured data (Product, Organization, BreadcrumbList schemas) will enable Google rich snippets — star ratings, price, availability — in organic search results, increasing click-through rates from search. The technical audit explicitly flags &#39;No JSON-LD structured data found on the homepage&#39; as a Warn, and with 12 products in the catalog there is significant untapped organic search surface area.</li>
+<li><strong>Primary change:</strong> Inject JSON-LD Product schema (name, price, availability, aggregateRating) on all 12 PDPs and Organization schema on the homepage via Shopify theme liquid or a structured data app.</li>
+<li><strong>Primary KPI:</strong> Organic search click-through rate (Google Search Console)</li>
+<li><strong>Decision rule:</strong> Ship if organic CTR improves by ≥10% within 60 days without any drop in crawl coverage.</li>
+<li><strong>Expected lift:</strong> +10-20%</li>
+<li><strong>Confidence:</strong> 85%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-06 — Add a Tea Subscription / Subscribe &amp; Save Option on High-Velocity Tea PDPs</h3>
 <ul>
 <li><strong>Pillar:</strong> Retention</li>
-<li><strong>Affected surface:</strong> Product detail page</li>
-<li><strong>URL:</strong> https://zenrojas.com/products/unwind</li>
-<li><strong>Evidence:</strong> content/01-pdp.md</li>
-<li><strong>Hypothesis:</strong> Repeat purchase rate improves by letting daily tea drinkers auto-replenish their staple. The captured Unwind PDP advertises ~15 cups (30g) per bag — a few weeks of daily use — but offers only one-time purchase, so loyal customers must remember to reorder.</li>
-<li><strong>Primary change:</strong> Add a &#34;Subscribe &amp; save 10%&#34; toggle on consumable tea PDPs with an editable delivery cadence.</li>
-<li><strong>Primary KPI:</strong> 90-day repeat purchase rate</li>
-<li><strong>Decision rule:</strong> Ship if 90-day repeat purchase rate improves without hurting first-order conversion.</li>
-<li><strong>Expected lift:</strong> +6–11%</li>
+<li><strong>Affected surface:</strong> Product Detail Page — Organic Sleep Tea</li>
+<li><strong>URL:</strong> https://zenrojas.com/products/organicsleeptea</li>
+<li><strong>Evidence:</strong> catalog.json</li>
+<li><strong>Hypothesis:</strong> Offering a subscribe-and-save option (e.g., 10% off, delivered every 30 days) on consumable tea SKUs will convert one-time buyers into recurring revenue and increase customer lifetime value. The catalog contains at least 7 consumable tea products (Unwind, Sleep, Bodyguard, Black Tea, Sencha, Heartburn, Tea Bags) with no subscription mechanic visible in any captured surface.</li>
+<li><strong>Primary change:</strong> Integrate a Shopify subscription app (e.g., Recharge or Seal Subscriptions) and add a &#39;One-time / Subscribe &amp; Save 10%&#39; toggle on all tea PDPs.</li>
+<li><strong>Primary KPI:</strong> Subscription opt-in rate / Customer LTV at 180 days</li>
+<li><strong>Decision rule:</strong> Ship if subscription opt-in rate exceeds 5% of tea PDP visitors without reducing one-time purchase conversion.</li>
+<li><strong>Expected lift:</strong> +12-22%</li>
 <li><strong>Confidence:</strong> 70%</li>
 </ul>
 </section>
 <section class="experiment">
-<h3>exp-zr-ret-reorder — Send a timed reorder reminder</h3>
-<ul>
-<li><strong>Pillar:</strong> Retention</li>
-<li><strong>Affected surface:</strong> Lifecycle email (new)</li>
-<li><strong>URL:</strong> https://zenrojas.com/products/unwind</li>
-<li><strong>Evidence:</strong> content/01-pdp.md</li>
-<li><strong>Hypothesis:</strong> Reorder rate improves by emailing a one-tap reorder timed to when a bag runs out. With ~15 cups per bag (captured on the Unwind PDP) and no replenishment prompt today, repeat demand depends entirely on the customer remembering the brand.</li>
-<li><strong>Primary change:</strong> Trigger a reorder-reminder email ~21 days post-purchase with a pre-filled cart of the items previously bought.</li>
-<li><strong>Primary KPI:</strong> 30-day reorder rate</li>
-<li><strong>Decision rule:</strong> Ship if 30-day reorder rate improves without hurting email unsubscribe rate.</li>
-<li><strong>Expected lift:</strong> +5–10%</li>
-<li><strong>Confidence:</strong> 68%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-zr-acq-schema — Add product structured data</h3>
-<ul>
-<li><strong>Pillar:</strong> Acquisition</li>
-<li><strong>Affected surface:</strong> Homepage and PDP document head</li>
-<li><strong>URL:</strong> https://zenrojas.com/</li>
-<li><strong>Evidence:</strong> technical.json</li>
-<li><strong>Hypothesis:</strong> Organic acquisition improves by adding Product, Organization, and AggregateRating JSON-LD so listings qualify for rich results. The technical scan found no JSON-LD structured data on the homepage, so the store forfeits star ratings and price snippets in search.</li>
-<li><strong>Primary change:</strong> Add Product/Organization JSON-LD to PDPs and the homepage, including review aggregate once the review module ships.</li>
-<li><strong>Primary KPI:</strong> Organic search click-through rate</li>
-<li><strong>Decision rule:</strong> Ship if organic CTR improves without hurting page load time.</li>
-<li><strong>Expected lift:</strong> +4–8%</li>
-<li><strong>Confidence:</strong> 68%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-zr-acq-quiz — Build a &#39;find your tea&#39; wellness quiz</h3>
-<ul>
-<li><strong>Pillar:</strong> Acquisition</li>
-<li><strong>Affected surface:</strong> New page at /pages/find-your-tea/</li>
-<li><strong>URL:</strong> https://zenrojas.com/pages/find-your-tea/ (new)</li>
-<li><strong>Evidence:</strong> screenshots/00-homepage.png</li>
-<li><strong>Hypothesis:</strong> Landing-page CVR improves by routing wellness-intent visitors to the matched tea before they self-navigate a 12-SKU range. The captured homepage already frames teas by moment (sleep, energy, digestion, immunity) but leaves shoppers to find the right one on their own.</li>
-<li><strong>Primary change:</strong> Add a four-question wellness quiz that returns a recommended tea, the benefit rationale, and an add-to-cart; link it from the primary nav and homepage.</li>
-<li><strong>Primary KPI:</strong> Quiz landing-page conversion rate</li>
-<li><strong>Decision rule:</strong> Ship if quiz landing-page CVR improves without hurting site-wide conversion.</li>
-<li><strong>Expected lift:</strong> +8–14%</li>
-<li><strong>Confidence:</strong> 66%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-zr-perf-mobile — Cut mobile image weight</h3>
+<h3>EXP-07 — Improve Mobile PageSpeed Score from 72 to 85+ via Image Format and Render-Blocking Fixes</h3>
 <ul>
 <li><strong>Pillar:</strong> Performance</li>
-<li><strong>Affected surface:</strong> Homepage and PDP imagery</li>
-<li><strong>URL:</strong> https://zenrojas.com/</li>
-<li><strong>Evidence:</strong> screenshots/00-homepage.png</li>
-<li><strong>Hypothesis:</strong> Bounce drops as mobile largest-contentful-paint improves. PageSpeed mobile scored 49 and the captured homepage ships multiple full-size CDN images (including .heic source files) above the fold, delaying first render on phones.</li>
-<li><strong>Primary change:</strong> Serve responsive compressed WebP for hero and tile imagery, lazy-load below-fold media, and defer non-critical scripts.</li>
-<li><strong>Primary KPI:</strong> Mobile LCP</li>
-<li><strong>Decision rule:</strong> Ship if mobile LCP improves without hurting homepage click-through.</li>
-<li><strong>Expected lift:</strong> +8–15%</li>
-<li><strong>Confidence:</strong> 78%</li>
+<li><strong>Affected surface:</strong> Sitewide — Mobile</li>
+<li><strong>URL:</strong> https://zenrojas.com</li>
+<li><strong>Evidence:</strong> technical.json</li>
+<li><strong>Hypothesis:</strong> Optimizing image formats (converting .heic files to WebP), lazy-loading below-the-fold images, and deferring non-critical scripts will raise the mobile PageSpeed score from 72 toward 85+, reducing bounce rates among mobile shoppers. The technical audit flags mobile PageSpeed at 72 and image optimization as unresolved Warns, and the homepage content references multiple .heic image files served from the Shopify CDN which are not natively optimal for web delivery.</li>
+<li><strong>Primary change:</strong> Convert all .heic product and homepage images to WebP format, implement native lazy loading on below-fold images, and defer third-party scripts (social share, chat widget) to reduce Time to Interactive.</li>
+<li><strong>Primary KPI:</strong> Mobile PageSpeed score / Mobile bounce rate</li>
+<li><strong>Decision rule:</strong> Ship if mobile PageSpeed score reaches ≥82 without any increase in mobile cart abandonment rate.</li>
+<li><strong>Expected lift:</strong> +6-11%</li>
+<li><strong>Confidence:</strong> 80%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-08 — Add a &#39;Complete the Ritual&#39; Cross-Sell Section on Tea PDPs Linking to Teaware</h3>
+<ul>
+<li><strong>Pillar:</strong> AOV</li>
+<li><strong>Affected surface:</strong> Product Detail Page — Bodyguard Organic Tea</li>
+<li><strong>URL:</strong> https://zenrojas.com/products/bodyguardtea</li>
+<li><strong>Evidence:</strong> content/00-homepage.md</li>
+<li><strong>Hypothesis:</strong> Adding a &#39;Complete the Ritual&#39; cross-sell row beneath the Add-to-Cart button on tea PDPs — featuring the Tea Infuser ($5), Tea Bags ($5), and Zen Rojas Mug ($8) — will increase units per transaction by surfacing complementary teaware at the point of highest purchase intent. The homepage already groups these teaware items under the heading &#39;Steep Into Something Sacred&#39; confirming brand-level intent to bundle, but this pairing is absent from tea PDPs in the captured content.</li>
+<li><strong>Primary change:</strong> Add a 3-product horizontal cross-sell widget (&#39;Complete the Ritual&#39;) on all tea PDPs featuring Tea Infuser, Tea Bags, and Mug with one-click add-to-cart.</li>
+<li><strong>Primary KPI:</strong> Units per transaction / AOV</li>
+<li><strong>Decision rule:</strong> Ship if AOV increases by ≥$2.50 without reducing tea PDP conversion rate.</li>
+<li><strong>Expected lift:</strong> +7-12%</li>
+<li><strong>Confidence:</strong> 75%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-09 — Add a Sampler-to-Full-Size Upsell Prompt Post-Add-to-Cart for Sampler Products</h3>
+<ul>
+<li><strong>Pillar:</strong> AOV</li>
+<li><strong>Affected surface:</strong> Product Detail Page — Zen Rojas Tea Bag Samplers</li>
+<li><strong>URL:</strong> https://zenrojas.com/products/teabagsamplers</li>
+<li><strong>Evidence:</strong> content/02-collection.md</li>
+<li><strong>Hypothesis:</strong> Displaying a post-add-to-cart modal suggesting the full-size version of the sampled tea (e.g., &#39;Love this blend? Grab the full 50g bag and save&#39;) will convert sampler buyers into higher-value full-size purchases in the same session. The Best Sellers collection page shows Tea Bag Samplers starting from $2 alongside full-size teas at $8–$13, indicating a clear price ladder that is not currently being leveraged with an upsell prompt.</li>
+<li><strong>Primary change:</strong> Trigger a slide-in upsell modal after &#39;Add to Cart&#39; on sampler PDPs, recommending the corresponding full-size SKU with a brief value message and one-click add.</li>
+<li><strong>Primary KPI:</strong> Average Order Value / Sampler-to-full-size attach rate</li>
+<li><strong>Decision rule:</strong> Ship if sampler-to-full-size attach rate exceeds 8% without increasing cart abandonment.</li>
+<li><strong>Expected lift:</strong> +9-15%</li>
+<li><strong>Confidence:</strong> 72%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-10 — Add a &#39;Why Organic?&#39; Trust Section with Certifications and Sourcing Story on the Homepage</h3>
+<ul>
+<li><strong>Pillar:</strong> Acquisition</li>
+<li><strong>Affected surface:</strong> Homepage</li>
+<li><strong>URL:</strong> https://zenrojas.com</li>
+<li><strong>Evidence:</strong> content/01-pdp.md</li>
+<li><strong>Hypothesis:</strong> Adding a dedicated homepage section with organic certification badges, an ethical sourcing statement, and a one-sentence origin story will improve trust signals for first-time visitors arriving from paid or organic search, increasing homepage-to-collection click-through. The PDP copy states &#39;All Zen Rojas teas are 100% organic and ethically sourced&#39; but this claim is buried in fine print on a single product page and is absent from the homepage&#39;s above-the-fold and mid-page sections.</li>
+<li><strong>Primary change:</strong> Insert a 3-column trust bar on the homepage (below the hero) with icons and short copy for: &#39;100% USDA Organic&#39;, &#39;Ethically Sourced&#39;, and &#39;30-Day Guarantee&#39;, linking to a dedicated About/Sourcing page.</li>
+<li><strong>Primary KPI:</strong> Homepage-to-collection CTR / New visitor conversion rate</li>
+<li><strong>Decision rule:</strong> Ship if homepage-to-collection CTR improves by ≥6% without hurting homepage bounce rate.</li>
+<li><strong>Expected lift:</strong> +6-12%</li>
+<li><strong>Confidence:</strong> 73%</li>
 </ul>
 </section>
 <h2>Competitor analysis</h2>
-<p>Competitors win the wellness-tea shopper through benefit-led navigation, symptom-specific discovery, and subscriptions. Zen Rojas&#39;s edge is a small, curated organic loose-leaf range, a founder-led story, and a direct customer relationship.</p><table>
+<p>Zen Rojas competes in the premium organic wellness tea segment against brands that have invested heavily in ritual-based storytelling, subscription infrastructure, and community-driven social proof. The following four competitors represent the primary conversion and positioning benchmarks.</p><table>
 <thead><tr><th>Competitor</th><th>Domain</th><th>Positioning</th><th>What they make easier</th><th>Zen Rojas edge</th><th>Pattern to adapt</th></tr></thead>
 <tbody>
-<tr><td>Pukka Herbs</td><td>pukkaherbs.com</td><td>Organic herbal wellness tea</td><td>Benefit-led browsing (sleep, digestion, energy) across a broad range.</td><td>Smaller curated range with a founder story and a direct relationship.</td><td>Clear benefit/intention filters and ritual bundles.</td></tr>
-<tr><td>Traditional Medicinals</td><td>traditionalmedicinals.com</td><td>Functional wellness teas by symptom</td><td>Symptom-specific shopping with strong trust cues.</td><td>Premium loose-leaf positioning and a modern, calmer brand.</td><td>Symptom-led navigation plus subscription for repeat use.</td></tr>
-<tr><td>Yogi Tea</td><td>yogiproducts.com</td><td>Intention-based functional tea</td><td>Intention-led discovery and variety packs.</td><td>Organic loose-leaf focus and a smaller, curated catalog.</td><td>Variety / sampler packs as a low-risk trial entry.</td></tr>
-<tr><td>Rishi Tea</td><td>rishi-tea.com</td><td>Organic loose-leaf and botanicals</td><td>Brewing education and origin storytelling.</td><td>Wellness-moment merchandising at an approachable price.</td><td>Brew guides plus subscription for loose-leaf staples.</td></tr>
+<tr><td>Vahdam Teas</td><td>vahdamteas.com</td><td>Farm-to-cup premium Indian teas with direct sourcing transparency and strong sustainability credentials.</td><td>Vahdam makes it easy to understand origin and sourcing with dedicated &#39;From the Garden&#39; storytelling on every PDP, plus a robust subscription program with flexible cadence controls.</td><td>Zen Rojas has a tighter, more curated catalog focused on functional wellness blends (sleep, immunity, digestion) which is a clearer benefit-led positioning than Vahdam&#39;s origin-first approach.</td><td>Adopt Vahdam&#39;s per-PDP sourcing callout (farm name, region, harvest date) to reinforce the &#39;ethically sourced&#39; claim already in Zen Rojas PDP copy.</td></tr>
+<tr><td>Pique Tea</td><td>piquelife.com</td><td>Science-backed functional teas in crystal form targeting health-optimizers and biohackers with clinical language and influencer credibility.</td><td>Pique makes the health benefit case with clinical citations, third-party lab test results, and a quiz-based product finder that routes shoppers to the right SKU in under 60 seconds.</td><td>Zen Rojas&#39;s accessible price points ($2 samplers, $5 infuser) and loose-leaf format appeal to a broader, ritual-focused audience that Pique&#39;s premium price tier ($40+) excludes.</td><td>Implement a short &#39;Find Your Tea&#39; quiz on the homepage to replicate Pique&#39;s guided selling mechanic and reduce decision paralysis across 12 SKUs.</td></tr>
+<tr><td>Harney &amp; Sons</td><td>harney.com</td><td>Heritage American tea brand with 35+ years of authority, extensive SKU depth, and strong gifting positioning.</td><td>Harney makes gifting frictionless with dedicated gift sets, gift message fields at checkout, and a prominent &#39;Gifts&#39; navigation category that surfaces curated bundles by price range.</td><td>Zen Rojas&#39;s organic-only, wellness-first positioning is a sharper differentiator than Harney&#39;s broad conventional catalog for health-conscious millennial buyers.</td><td>Build a dedicated Gifts collection page with pre-bundled gift sets (e.g., Mug + Sampler + Infuser) and a gift message option at checkout to capture the gifting occasion.</td></tr>
+<tr><td>Art of Tea</td><td>artoftea.com</td><td>Artisan blended teas with a strong B2B wholesale channel and a loyalty rewards program that drives repeat DTC purchases.</td><td>Art of Tea makes repeat purchasing easy with a visible points-based loyalty program, a subscription with pause/skip controls, and a &#39;Recently Viewed&#39; persistent widget across the browse experience.</td><td>Zen Rojas&#39;s focused functional wellness narrative (sleep, immunity, digestion, energy) is more actionable for a shopper with a specific health goal than Art of Tea&#39;s flavor-first catalog.</td><td>Launch a simple points-based loyalty program (e.g., via Smile.io) with visible point balances in the account dashboard to mirror Art of Tea&#39;s repeat-purchase engine.</td></tr>
 </tbody>
 </table>
 <h2>Technical checks</h2>
@@ -182,8 +182,8 @@
 <tr><td>Structured Data</td><td>Warn</td><td>No JSON-LD structured data found on the homepage.</td></tr>
 <tr><td>Favicon</td><td>Warn</td><td>No favicon at /favicon.ico (often theme-defined).</td></tr>
 <tr><td>Mobile-Friendly</td><td>Pass</td><td>Responsive viewport meta tag present.</td></tr>
-<tr><td>Page Speed Mobile</td><td>Warn</td><td>PageSpeed Insights mobile performance score 49.</td></tr>
-<tr><td>Page Speed Desktop</td><td>Warn</td><td>PageSpeed Insights desktop performance score 79.</td></tr>
+<tr><td>Page Speed Mobile</td><td>Warn</td><td>PageSpeed Insights mobile performance score 72.</td></tr>
+<tr><td>Page Speed Desktop</td><td>Warn</td><td>PageSpeed Insights desktop performance score 63.</td></tr>
 <tr><td>Broken Links</td><td>Pass</td><td>No broken links among the homepage and /cart checks.</td></tr>
 <tr><td>Image Optimization</td><td>Warn</td><td>Byte-level image weight not measured in this pass.</td></tr>
 <tr><td>Cookie/Privacy</td><td>Warn</td><td>Privacy policy link present; consent mechanics not inspected.</td></tr>

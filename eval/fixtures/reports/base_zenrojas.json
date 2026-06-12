@@ -1,0 +1,264 @@
+{
+  "store_url": "https://zenrojas.com",
+  "store_name": "Zen Rojas",
+  "title": "Zen Rojas CRO Audit Report",
+  "executive_summary": [
+    "**Zen Rojas has a clear brand identity and a focused organic tea catalog, but conversion is being left on the table due to missing trust signals, thin social proof, and a homepage that leads with mood rather than product specifics.** The site's 12-product catalog spans teas, teaware, samplers, and a gift card, giving a solid foundation for AOV-lifting bundles and subscription plays \u2014 yet none of these mechanics are visible in the captured homepage or PDP content.",
+    "**Page speed is the most urgent technical liability: a mobile PageSpeed score of 62 and desktop score of 79 will suppress both paid and organic acquisition before a visitor ever reads a headline.** HEIC image formats are served directly from the Shopify CDN (visible in homepage and PDP content), which are not universally supported and add unnecessary decode overhead on mobile browsers, compounding the speed problem.",
+    "**The sampler products (Tea Bag Samplers and Loose Leaf Samplers starting from $2) are the store's best acquisition hook, but they are buried below the fold on the homepage and absent from the PDP cross-sell logic.** Elevating samplers as a low-friction entry point, pairing them with a post-purchase upsell sequence, and adding structured data and a favicon will collectively move the needle across all five CRO pillars."
+  ],
+  "experiments": [
+    {
+      "exp_id": "EXP-01",
+      "title": "Add Star Ratings + Review Count to Homepage Product Cards",
+      "pillar": "Conversion",
+      "affected_surface": "Homepage product grid",
+      "url": "https://zenrojas.com",
+      "evidence": "content/00-homepage.md",
+      "hypothesis": "Displaying star ratings and review counts directly on homepage product cards will reduce purchase hesitation by providing social proof at the point of first discovery. The current homepage shows product cards with only a name and price (e.g., Bodyguard Organic Tea at $13) and zero visible reviews or ratings.",
+      "primary_change": "Inject star-rating widget (e.g., Judge.me or Loox) beneath each product card title on the homepage grid sections.",
+      "primary_kpi": "Homepage click-through rate to PDP",
+      "decision_rule": "Ship if PDP click-through rate from homepage improves by at least 8% without increasing bounce rate.",
+      "expected_lift": "+8-15%",
+      "confidence": "74%"
+    },
+    {
+      "exp_id": "EXP-02",
+      "title": "Pin Sampler Products as Hero CTA Above the Fold",
+      "pillar": "Acquisition",
+      "affected_surface": "Homepage hero section",
+      "url": "https://zenrojas.com/pages/find-your-tea (new)",
+      "evidence": "content/00-homepage.md",
+      "hypothesis": "Replacing or supplementing the generic 'Discover Your Ritual' hero CTA with a direct link to the $2 sampler products will lower the barrier to first purchase and improve new-visitor conversion. The homepage currently leads with a mood-based headline and a 'Discover Your Ritual' CTA pointing to the full teas collection, while samplers starting from $2 appear only below the fold.",
+      "primary_change": "Add a secondary hero CTA button labeled 'Try a Sampler from $2' linking to /products/teabagsamplers alongside the existing primary CTA.",
+      "primary_kpi": "New visitor conversion rate",
+      "decision_rule": "Ship if new visitor conversion rate improves without reducing average order value below $10.",
+      "expected_lift": "+10-18%",
+      "confidence": "70%"
+    },
+    {
+      "exp_id": "EXP-03",
+      "title": "Convert HEIC Images to WebP to Improve Mobile Page Speed",
+      "pillar": "Performance",
+      "affected_surface": "Sitewide (homepage, PDP, collection)",
+      "url": "https://zenrojas.com",
+      "evidence": "content/01-pdp.md",
+      "hypothesis": "Converting HEIC product images to WebP format will reduce image decode time on mobile browsers and improve the PageSpeed mobile score above 75, directly reducing bounce rate from paid and organic traffic. The PDP and homepage CDN URLs reveal HEIC files being served (e.g., FullSizeRender.heic), and the current mobile PageSpeed score is 62.",
+      "primary_change": "Re-upload all product images in WebP format and update Shopify theme image references; enable Shopify's built-in image optimization for CDN delivery.",
+      "primary_kpi": "Mobile PageSpeed score",
+      "decision_rule": "Ship if mobile PageSpeed score reaches 75 or above without introducing any broken image references.",
+      "expected_lift": "+12-20%",
+      "confidence": "82%"
+    },
+    {
+      "exp_id": "EXP-04",
+      "title": "Add JSON-LD Structured Data (Product + Organization) to Homepage and PDPs",
+      "pillar": "Acquisition",
+      "affected_surface": "Homepage and all PDP pages",
+      "url": "https://zenrojas.com",
+      "evidence": "technical.json",
+      "hypothesis": "Adding JSON-LD structured data for Product and Organization schema will enable rich results in Google Search, increasing organic click-through rate from search engine results pages. The technical audit explicitly flags 'No JSON-LD structured data found on the homepage' as a warning, meaning the store is currently invisible to rich-result eligibility.",
+      "primary_change": "Inject JSON-LD Product schema (name, price, availability, review aggregate) on all PDPs and Organization schema on the homepage via Shopify theme liquid.",
+      "primary_kpi": "Organic search click-through rate",
+      "decision_rule": "Ship if Google Search Console shows improved rich-result impressions within 60 days without any manual action penalties.",
+      "expected_lift": "+8-14%",
+      "confidence": "80%"
+    },
+    {
+      "exp_id": "EXP-05",
+      "title": "Introduce a Bundle Builder: Tea + Infuser + Mug at a Discount",
+      "pillar": "AOV",
+      "affected_surface": "PDP and cart",
+      "url": "https://zenrojas.com/products/zen-rojas-mug",
+      "evidence": "content/01-pdp.md",
+      "hypothesis": "Offering a pre-built bundle of a tea (e.g., Bodyguard at $13) + Tea Infuser ($5) + Mug ($8) at a 10% discount ($23.40 vs $26) will increase average order value by encouraging multi-item purchases. The PDP already shows a 'Frequently bought together' section pairing the Mug ($8) with the Tea Infuser ($5) for $13, proving the cross-sell intent exists but lacks a discount incentive to convert.",
+      "primary_change": "Create a named bundle product or use a bundle app to offer Tea + Infuser + Mug at 10% off with a single 'Add Bundle to Cart' button on relevant PDPs.",
+      "primary_kpi": "Average order value",
+      "decision_rule": "Ship if average order value increases by at least $3 without reducing overall conversion rate.",
+      "expected_lift": "+12-22%",
+      "confidence": "72%"
+    },
+    {
+      "exp_id": "EXP-06",
+      "title": "Add a Sticky 'Subscribe & Save' Upsell on Tea PDPs",
+      "pillar": "Retention",
+      "affected_surface": "Tea product detail pages",
+      "url": "https://zenrojas.com/products/organicsleeptea",
+      "evidence": "content/01-pdp.md",
+      "hypothesis": "Offering a subscribe-and-save option (e.g., 15% off recurring orders) on tea PDPs will convert one-time buyers into repeat subscribers, improving customer lifetime value. The current PDP content for the Zen Rojas Mug shows only a one-time purchase option with no subscription toggle, and no subscription mechanic is referenced anywhere in the captured content.",
+      "primary_change": "Integrate a subscription app (e.g., Recharge or Seal Subscriptions) to add a 'Subscribe & Save 15%' toggle on all tea PDPs above the Add to Cart button.",
+      "primary_kpi": "Subscription opt-in rate",
+      "decision_rule": "Ship if subscription opt-in rate exceeds 5% of tea PDP add-to-cart events without reducing one-time purchase conversion.",
+      "expected_lift": "+15-25%",
+      "confidence": "68%"
+    },
+    {
+      "exp_id": "EXP-07",
+      "title": "Display a Favicon to Reinforce Brand Recognition in Browser Tabs",
+      "pillar": "Conversion",
+      "affected_surface": "Sitewide browser chrome",
+      "url": "https://zenrojas.com",
+      "evidence": "technical.json",
+      "hypothesis": "Adding a branded favicon will improve brand recall for users with multiple tabs open, reducing tab abandonment and increasing return-visit session starts. The technical audit flags 'No favicon at /favicon.ico' as a warning, meaning the store currently shows a blank or default browser icon in every tab.",
+      "primary_change": "Upload a 32x32 and 180x180 PNG favicon derived from the Zen Rojas logo via Shopify Admin > Online Store > Preferences.",
+      "primary_kpi": "Return visit rate (direct traffic sessions)",
+      "decision_rule": "Ship if implementation is confirmed without any theme rendering errors; no A/B test required for this structural fix.",
+      "expected_lift": "+3-6%",
+      "confidence": "85%"
+    },
+    {
+      "exp_id": "EXP-08",
+      "title": "Add a Post-Purchase Email Sequence Promoting Complementary Teas",
+      "pillar": "Retention",
+      "affected_surface": "Post-purchase email flow",
+      "url": "https://zenrojas.com",
+      "evidence": "catalog.json",
+      "hypothesis": "A 3-email post-purchase sequence (Day 3: brewing tips, Day 7: complementary tea recommendation, Day 14: replenishment reminder) will increase repeat purchase rate among first-time buyers. The catalog contains 12 distinct products across wellness categories (sleep, immunity, digestion, energy), providing natural cross-sell pairings that are not currently surfaced in any captured post-purchase touchpoint.",
+      "primary_change": "Build a Klaviyo or Shopify Email post-purchase flow with 3 automated emails referencing the customer's purchased tea category and recommending a complementary blend.",
+      "primary_kpi": "30-day repeat purchase rate",
+      "decision_rule": "Ship if 30-day repeat purchase rate improves by at least 5% without increasing unsubscribe rate above 0.5%.",
+      "expected_lift": "+10-20%",
+      "confidence": "70%"
+    },
+    {
+      "exp_id": "EXP-09",
+      "title": "Surface the Best Sellers Collection as a Dedicated Homepage Section with Urgency Signals",
+      "pillar": "Conversion",
+      "affected_surface": "Homepage",
+      "url": "https://zenrojas.com",
+      "evidence": "content/00-homepage.md",
+      "hypothesis": "Adding a 'Best Sellers' section to the homepage with low-stock or popularity badges will create urgency and guide undecided visitors toward proven products, improving add-to-cart rate. The catalog confirms a 'Best Sellers' collection exists at /collections/best-sellers, but the homepage content shows no dedicated best-sellers section \u2014 only category-based sections (Sleep, Immune, Energy, Digestion).",
+      "primary_change": "Add a 'Best Sellers' product grid section to the homepage (4 products) with a 'Popular' badge and a low-stock indicator where inventory allows.",
+      "primary_kpi": "Homepage add-to-cart rate",
+      "decision_rule": "Ship if homepage add-to-cart rate improves by at least 6% without increasing cart abandonment rate.",
+      "expected_lift": "+6-12%",
+      "confidence": "72%"
+    },
+    {
+      "exp_id": "EXP-10",
+      "title": "Add a Cart Progress Bar ('Spend $X more for free shipping') to the Cart Page",
+      "pillar": "AOV",
+      "affected_surface": "Cart page",
+      "url": "https://zenrojas.com/cart",
+      "evidence": "content/03-cart.md",
+      "hypothesis": "Displaying a free-shipping progress bar in the cart will motivate customers to add one more item to reach the threshold, increasing average order value. The current cart page content shows only a subtotal, discount field, and checkout button with no shipping incentive or progress indicator visible.",
+      "primary_change": "Add a dynamic cart progress bar (e.g., via theme customization or a free-shipping bar app) set to a $35 free-shipping threshold, matching the existing 'pay over time for orders over $35' messaging on the PDP.",
+      "primary_kpi": "Average order value",
+      "decision_rule": "Ship if average order value increases by at least $4 without reducing cart-to-checkout conversion rate.",
+      "expected_lift": "+8-16%",
+      "confidence": "76%"
+    }
+  ],
+  "competitor_intro": "Zen Rojas competes in the premium organic tea DTC space against brands that have invested heavily in subscription infrastructure, educational content, and wellness community building. The following four competitors represent the primary benchmarks for UX patterns, trust mechanics, and AOV strategies.",
+  "competitors": [
+    {
+      "competitor": "Pique Tea",
+      "domain": "piquetea.com",
+      "positioning": "Science-backed, ultra-premium functional teas with a strong health and longevity narrative targeting high-income wellness consumers.",
+      "what_they_make_easier": "Subscription setup is prominent on every PDP with clear savings callouts; a detailed 'Why Pique' trust section with clinical references reduces purchase hesitation.",
+      "store_edge": "Zen Rojas's organic, ethically sourced positioning and accessible price points ($2 samplers, $8 teas) make it more approachable for first-time tea buyers.",
+      "pattern_to_adapt": "Add a 'Why Zen Rojas' trust section to the homepage with organic certification badges, sourcing story, and a 30-day warranty callout (already mentioned in PDP copy but not homepage)."
+    },
+    {
+      "competitor": "Harney & Sons",
+      "domain": "harney.com",
+      "positioning": "Heritage American tea brand with a vast catalog, strong gifting angle, and broad retail distribution.",
+      "what_they_make_easier": "Gift sets and sampler discovery are front-and-center with clear occasion-based navigation (Birthday, Holiday, Thank You), making gifting decisions effortless.",
+      "store_edge": "Zen Rojas's wellness-first, functional tea framing (sleep, immunity, digestion, energy) is more differentiated than Harney's traditional flavor-first approach.",
+      "pattern_to_adapt": "Create occasion-based gift landing pages (e.g., 'Gifts for Tea Lovers') linking to the E-giftcard and sampler products to capture gifting search intent."
+    },
+    {
+      "competitor": "Art of Tea",
+      "domain": "artoftea.com",
+      "positioning": "Artisan, chef-inspired organic teas with a strong B2B and hospitality channel alongside DTC.",
+      "what_they_make_easier": "Robust filtering and sorting on collection pages (by caffeine level, flavor profile, health benefit) helps shoppers self-select quickly without reading every description.",
+      "store_edge": "Zen Rojas's simpler catalog (12 products) is less overwhelming, but needs better in-page filtering to help visitors navigate by wellness goal.",
+      "pattern_to_adapt": "Add wellness-goal filter tags to the Teas collection page (e.g., 'Sleep,' 'Energy,' 'Digestion,' 'Immunity') to mirror the homepage category sections."
+    },
+    {
+      "competitor": "Vahdam Teas",
+      "domain": "vahdam.com",
+      "positioning": "Farm-direct Indian teas with a strong sustainability and fair-trade narrative, aggressive subscription and loyalty program.",
+      "what_they_make_easier": "A visible loyalty points program ('Karma Points') is surfaced sitewide, and subscription discounts are shown on every PDP, making repeat purchase incentives impossible to miss.",
+      "store_edge": "Zen Rojas's focused functional wellness positioning is more specific than Vahdam's broad origin-story approach, giving it a clearer hook for health-conscious buyers.",
+      "pattern_to_adapt": "Introduce a simple loyalty or referral program (e.g., Smile.io) and surface it in the site header and post-purchase emails to drive repeat purchases and word-of-mouth."
+    }
+  ],
+  "tech_checks": [
+    {
+      "name": "SSL Certificate",
+      "status": "Pass",
+      "detail": "HTTPS storefront loaded successfully."
+    },
+    {
+      "name": "HTTPS Redirect",
+      "status": "Pass",
+      "detail": "http:// 301-redirected to HTTPS."
+    },
+    {
+      "name": "Sitemap",
+      "status": "Pass",
+      "detail": "sitemap.xml present and well-formed."
+    },
+    {
+      "name": "Robots.txt",
+      "status": "Pass",
+      "detail": "robots.txt present."
+    },
+    {
+      "name": "Critical Pages Loading",
+      "status": "Pass",
+      "detail": "Homepage and /cart returned 200."
+    },
+    {
+      "name": "Meta Tags & Social Previews",
+      "status": "Pass",
+      "detail": "Title, meta description, and Open Graph tags present."
+    },
+    {
+      "name": "Structured Data",
+      "status": "Warn",
+      "detail": "No JSON-LD structured data found on the homepage."
+    },
+    {
+      "name": "Favicon",
+      "status": "Warn",
+      "detail": "No favicon at /favicon.ico (often theme-defined)."
+    },
+    {
+      "name": "Mobile-Friendly",
+      "status": "Pass",
+      "detail": "Responsive viewport meta tag present."
+    },
+    {
+      "name": "Page Speed Mobile",
+      "status": "Warn",
+      "detail": "PageSpeed Insights mobile performance score 62."
+    },
+    {
+      "name": "Page Speed Desktop",
+      "status": "Warn",
+      "detail": "PageSpeed Insights desktop performance score 79."
+    },
+    {
+      "name": "Broken Links",
+      "status": "Pass",
+      "detail": "No broken links among the homepage and /cart checks."
+    },
+    {
+      "name": "Image Optimization",
+      "status": "Warn",
+      "detail": "Byte-level image weight not measured in this pass."
+    },
+    {
+      "name": "Cookie/Privacy",
+      "status": "Warn",
+      "detail": "Privacy policy link present; consent mechanics not inspected."
+    },
+    {
+      "name": "Checkout Reachable",
+      "status": "Pass",
+      "detail": "/cart reachable (200)."
+    }
+  ]
+}

@@ -158,6 +158,29 @@ def check_competitor_plausibility(report: dict) -> CheckResult:
                  "Competitors plausible." if not failures else f"{len(failures)} issue(s).", failures)
 
 
+def _count_artifacts(bundle_dir: Path) -> int:
+    bundle_dir = Path(bundle_dir)
+    n = sum(len(list((bundle_dir / sub).glob(pat))) for sub, pat in (("screenshots", "*.png"), ("content", "*.md")) if (bundle_dir / sub).exists())
+    return n + sum((bundle_dir / f).exists() for f in ("catalog.json", "technical.json"))
+
+
+def check_evidence_diversity(report: dict, bundle_dir: Path) -> CheckResult:
+    """Soft: reward spreading citations across surfaces instead of leaning on one artifact."""
+    cited = [str(e.get("evidence", "")).strip().split()[0] for e in (report.get("experiments") or []) if str(e.get("evidence", "")).strip()]
+    counts: dict[str, int] = {}
+    for c in cited:
+        counts[c] = counts.get(c, 0) + 1
+    distinct, max_reuse = len(counts), (max(counts.values()) if counts else 0)
+    want = min(5, _count_artifacts(bundle_dir) or 5)
+    failures = []
+    if distinct < want:
+        failures.append(f"only {distinct} distinct artifacts cited; aim for >= {want}")
+    if max_reuse > 3:
+        failures.append(f"one artifact cited {max_reuse}x; spread evidence across surfaces")
+    return _soft("evidence_diversity", not failures,
+                 "Evidence is well-spread." if not failures else f"{len(failures)} diversity issue(s).", failures)
+
+
 def run_deterministic(report: dict, bundle_dir: Path) -> list[CheckResult]:
     bundle_dir = Path(bundle_dir)
     return [
@@ -168,4 +191,5 @@ def run_deterministic(report: dict, bundle_dir: Path) -> list[CheckResult]:
         check_citation_resolution(report, bundle_dir),
         check_fabrication(report, bundle_dir),
         check_competitor_plausibility(report),
+        check_evidence_diversity(report, bundle_dir),
     ]

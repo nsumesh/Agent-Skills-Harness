@@ -79,5 +79,5 @@ def run_judge(report, bundle_dir, *, client=None, model: str = DEFAULT_MODEL) ->
             self_confidence=float(parsed.get("self_confidence", 0.0)),
         )
 
-    with ThreadPoolExecutor(max_workers=3) as pool:
+    with ThreadPoolExecutor(max_workers=len(RUBRICS)) as pool:
         return list(pool.map(score_one, list(RUBRICS)))

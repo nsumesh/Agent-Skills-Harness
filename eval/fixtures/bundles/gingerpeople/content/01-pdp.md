@@ -1,251 +1,139 @@
-### Ginger Rescue®    Digestive Wellness Lozenges
+# GIN GINS® Ginger Spice Drops
 
-#### For natural nausea relief
-
-[SHOP NOW](https://gingerpeople.com/ginger-rescue-lozenges/)
-
-### Real Relief. Real Ginger.
-
-#### NON-GMO \| GLUTEN FREE \| VEGAN
-
-#### 10x more ginger than leading brands
-
-[SHOP NOW](https://gingerpeople.com/ginger-rescue-lozenges/)
-
-#### FAST-ACTING NATURAL RELIEF
-
-### Nauseated?   Experience the power of red ginger
-
-#### For nausea, motion sickness & indigestion
-
-[SHOP NOW](https://gingerpeople.com/ginger-rescue-lozenges/)
-
-#### EMBRACE HEALTH YEAR-ROUND
-
-### Give the Gift of Wellness
-
-#### Try our ginger & turmeric gift set
-
-[SHOP NOW](https://www.amazon.com/Ginger-People-Turmeric-Digestion-Anti-Inflammatory/dp/B0B2FFC5MK?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER)
-
-### Turmeric Gingerade
-
-#### Antioxidant rich ginger, lemon and turmeric
-
-### FEEL IN HARMONY ALL DAY
-
-[SHOP NOW](https://gingerpeople.com/products/ginger-soother-turmeric-gingerade/)
-
-[![](https://gingerpeople.com/wp-content/uploads/2024/11/GG_HeartLeaves-crop-e1732731358290.png)](https://gingerpeople.com/gin-gins)
-
-**WORLD’S #1 SELLING GINGER CANDY**
-
-# Close to Freshness,  Close to Heart
-
-## Real Ginger. Real Benefits. Real Delicious.
-
-[SHOP NOW](https://gingerpeople.com/gin-gins/)
-
-### Discover What Fans Love About The Ginger People
-
-At The Ginger People, we’re more than just a brand—we’re a community of people who believe in the power of ginger and turmeric to improve your health and wellbeing.
-
-![](https://gingerpeople.com/wp-content/uploads/2021/02/90502_GinGins_Original_USCAN_500px.png)
-
-### Life Saver
-
-I’m pregnant and these have been a life saver my whole pregnancy. Im 34 weeks now and they have settled my tummy amazingly. I could eat them just to eat them even. They are delicious.[Show more](https://gingerpeople.com/#)
-
-~ TTBS
-
-[SHOP ORIGINAL GIN GINS](https://gingerpeople.com/products/gin-gins-original-ginger-chews/)
+by [Ginger People](https://gingerpeople.com/author/mrigoli/ "Posts by Ginger People") \| Feb 22, 2021
 
 ![](https://gingerpeople.com/wp-content/uploads/2021/03/90508_GinGins_SpiceDrops_500px.png)
 
-### Life Changing Remedy
+### GIN GINS® GINGER CANDY
 
-I have Non-Postional Vertigo due to a head injury. My Vertigo is permanent due to parental neglect. GIN GINS are an amazingly quick remedy for my nausea, dizziness and motion-induced symptoms. GIN GINS don’t knock me out like the Meclizine does. I honestly use whatever I can find, the chews, the spice drops and a long time ago there were even ginger gummy bears.[Show more](https://gingerpeople.com/#)
-
-~ Jane Brown
-
-[SHOP GINGER SPICE DROPS](https://gingerpeople.com/products/gin-gins-ginger-spice-drops/)
-
-![](https://gingerpeople.com/wp-content/uploads/2021/02/GingerRescueTabs-Strong_v2_500px.png)
-
-### Saved My Life
-
-These are fabulous. I have a delicate tummy and some days are tough. These tablets are my go-to. I thought I ran out and Sprouts stopped carrying them. I was experiencing nausea today and was so stressed my tummy was in knots. I found two tablets in my cupboard and I’m off to buy more at Whole Foods. Don’t ever stop making these![Show more](https://gingerpeople.com/#)
-
-~ Sallie
-
-[SHOP GINGER RESCUE TABLETS](https://gingerpeople.com/products/ginger-rescue-chewable-ginger-tablets-strong/)
-
-![](https://gingerpeople.com/wp-content/uploads/2024/07/US-90170-Ginger-Juice-8oz-301x300-a4acd96.png)
-
-### Thank You for Changing My Life!
-
-For over 6 years I have suffered from numerous conditions and have not found relief despite various treatments and medications and dietary changes. At the beginning of February 2023 I added your ginger juice and your turmeric juice to my diet. Just a one ounce shot like the bottle recommends each morning first thing when I wake. I mix it with organic OJ, pineapple, and lemon juices. Initially, the first week of February I only used the ginger and turmeric juices in the morning. By day 3 of my first week I was absolutely pain free. No digestion issues, no bloating, I did not feel like I had a big hard basketball shoved in my abdomen. No hemorrhoids, no polyps, no constipation. I could use my injured leg in ways I hadn’t been able to in years. I KNOW that it is because of your products. I feel like I am 20 years younger![Show more](https://gingerpeople.com/#)
-
-~ G.C.
-
-[SHOP FIJI GINGER JUICE](https://gingerpeople.com/products/fiji-ginger-juice/)
-
-![](https://gingerpeople.com/wp-content/uploads/2024/12/90905_GingerRescueWalmart_hard_lozenges_V1-01_FRONT-300x300-a4acd96.png)
-
-### Natural Remedy for Upset Stomach
-
-As a mother of seven and grandmother of seven, I’ve dealt with plenty of motion sickness, morning sickness and digestive discomfort over the years. I recently discovered Ginger Rescue Lozenges, and I’m so glad I did! These new lozenges are a fantastic, natural option for soothing nausea, and they’ll quickly become a go-to for my family. I love that they’re drug-free and made with real ginger, which is something I trust. Whether it’s long car rides or pregnancy-related nausea, I feel confident recommending them to my children.. If you’re looking for a simple, effective remedy, give these a try![Show more](https://gingerpeople.com/#)
-
-~ Susan
-
-[SHOP HARD GINGER LOZENGES](https://gingerpeople.com/products/ginger-rescue-hard-ginger-lozenges/)
-
-![](https://gingerpeople.com/wp-content/uploads/2024/09/02-Hero-300x300.jpg)
-
-### Changed my life!
-
-I was recently diagnosed with Trigeminal Neuralgia a few days before my 33rd birthday. Aside from my prescription meds, I struggled to find soothing throughout the day. That is until my husband and I began doing research on your product … it changed my life. The ginger and turmeric mixture really helps with the swelling on the left side of my face which also helps ease the pressure. While it is not the cure, it helps A LOT. Long story short. Thank you for existing![Show more](https://gingerpeople.com/#)
-
-~ Natalie
-
-[SHOP TURMERIC GINGERADE](https://gingerpeople.com/products/ginger-soother-turmeric-gingerade/)
-
-![](https://gingerpeople.com/wp-content/uploads/2022/06/US-90171-Turmeric-Juice-8oz-300x300.png)
-
-### Your products have been a godsend!
-
-I am writing to thank you for your amazing products. I broke my ankle 7 weeks ago. Somehow, a few weeks after surgery I found your products at a local market. I immediately liked that your Turmeric Juice and Ginger Juice had a short list of ingredients. At first, I sipped conservatively, and took the medicine I was prescribed, then my doctor said I could and should reduce my medication over time, your products enabled me to do that, with no more side effects.[Show more](https://gingerpeople.com/#)
-
-At my most recent visit, my doctor said swelling was much reduced with excellent progress.
-
-Please keep doing what you are doing! Your products are great!
-
-~ Lorraine
-
-[SHOP FIJI TURMERIC JUICE](https://gingerpeople.com/products/fiji-turmeric-juice/)
-
-![](https://gingerpeople.com/wp-content/uploads/2024/07/99500-Ginger-Soother-Lemon-Honey-12oz-US_v2-1000x1000-a006145.png)
-
-### Amazing Stuff!
-
-I have chronic pancreatitis. Since I knew ginger and turmeric were great natural anti-inflammatory substances, I started trying your Ginger and Turmeric Juice drink. I can’t tell you how much it helps, like a medicine should, in relieving my stomach pains and many different other stomach issues. I have been using it for almost 2 years now and will continue to keep drinking it everyday. It is amazing stuff.[Show more](https://gingerpeople.com/#)
-
-~ Stephen
-
-[SHOP TURMERIC GINGERADE](https://gingerpeople.com/products/ginger-soother-turmeric-gingerade/)
-
-![](https://gingerpeople.com/wp-content/uploads/2021/02/GingerRescueTabs-Strong_v2_500px.png)
-
-### Grateful!
-
-I am so grateful for these tablets. I use them along with my pressure point bands (on my wrists) when traveling via plane, bus, and subway; without them I would be in trouble![Show more](https://gingerpeople.com/#)
-
-~ Shivonne
-
-[SHOP GINGER RESCUE TABLETS](https://gingerpeople.com/products/ginger-rescue-chewable-ginger-tablets-strong/)
-
-![](https://gingerpeople.com/wp-content/uploads/2021/02/90502_GinGins_Original_USCAN_500px.png)
-
-### Best period nausea treatment
-
-I suffer with severe nausea from period cramps. Every month I take one or two of these candies and they do more for me than all of the pain killers I take to treat my symptoms. I am truly amazed. I’m so thankful for these candies for literally improving my quality of life when I’m on my period. I highly recommend that anyone who suffers from nausea should give these a try.[Show more](https://gingerpeople.com/#)
-
-~ Emma
-
-[SHOP ORIGINAL GIN GINS](https://gingerpeople.com/products/gin-gins-original-ginger-chews/)
-
-![](https://gingerpeople.com/wp-content/uploads/2021/02/90502_GinGins_Original_USCAN_500px.png)
-
-### Life Saver
-
-I’m pregnant and these have been a life saver my whole pregnancy. Im 34 weeks now and they have settled my tummy amazingly. I could eat them just to eat them even. They are delicious.[Show more](https://gingerpeople.com/#)
-
-~ TTBS
-
-[SHOP ORIGINAL GIN GINS](https://gingerpeople.com/products/gin-gins-original-ginger-chews/)
+[← NEXT](https://gingerpeople.com/products/fiji-crystallized-ginger/)
 
 ![](https://gingerpeople.com/wp-content/uploads/2021/03/90508_GinGins_SpiceDrops_500px.png)
 
-### Life Changing Remedy
+![](https://gingerpeople.com/wp-content/uploads/2021/07/90508_GinGinsSpiceDrops_1_1000px.jpg)
 
-I have Non-Postional Vertigo due to a head injury. My Vertigo is permanent due to parental neglect. GIN GINS are an amazingly quick remedy for my nausea, dizziness and motion-induced symptoms. GIN GINS don’t knock me out like the Meclizine does. I honestly use whatever I can find, the chews, the spice drops and a long time ago there were even ginger gummy bears.[Show more](https://gingerpeople.com/#)
+![](https://gingerpeople.com/wp-content/uploads/2021/07/90508_GinGinsSpiceDrops_2_1000px.jpg)
 
-~ Jane Brown
+![](https://gingerpeople.com/wp-content/uploads/2021/07/90508_GinGinsSpiceDrops_3_1000px.jpg)
 
-[SHOP GINGER SPICE DROPS](https://gingerpeople.com/products/gin-gins-ginger-spice-drops/)
+90508\_GinGins\_SpiceDrops\_500px
 
-![](https://gingerpeople.com/wp-content/uploads/2021/02/GingerRescueTabs-Strong_v2_500px.png)
+90508\_GinGinsSpiceDrops\_1\_1000px
 
-### Saved My Life
+90508\_GinGinsSpiceDrops\_2\_1000px
 
-These are fabulous. I have a delicate tummy and some days are tough. These tablets are my go-to. I thought I ran out and Sprouts stopped carrying them. I was experiencing nausea today and was so stressed my tummy was in knots. I found two tablets in my cupboard and I’m off to buy more at Whole Foods. Don’t ever stop making these![Show more](https://gingerpeople.com/#)
+90508\_GinGinsSpiceDrops\_3\_1000px
 
-~ Sallie
+![90508_GinGins_SpiceDrops_500px](https://gingerpeople.com/wp-content/uploads/2021/03/90508_GinGins_SpiceDrops_500px.png)
 
-[SHOP GINGER RESCUE TABLETS](https://gingerpeople.com/products/ginger-rescue-chewable-ginger-tablets-strong/)
+![90508_GinGinsSpiceDrops_1_1000px](https://gingerpeople.com/wp-content/uploads/2021/07/90508_GinGinsSpiceDrops_1_1000px.jpg)
 
-![](https://gingerpeople.com/wp-content/uploads/2024/07/US-90170-Ginger-Juice-8oz-301x300-a4acd96.png)
+![90508_GinGinsSpiceDrops_2_1000px](https://gingerpeople.com/wp-content/uploads/2021/07/90508_GinGinsSpiceDrops_2_1000px.jpg)
 
-### Thank You for Changing My Life!
+![90508_GinGinsSpiceDrops_3_1000px](https://gingerpeople.com/wp-content/uploads/2021/07/90508_GinGinsSpiceDrops_3_1000px.jpg)
 
-For over 6 years I have suffered from numerous conditions and have not found relief despite various treatments and medications and dietary changes. At the beginning of February 2023 I added your ginger juice and your turmeric juice to my diet. Just a one ounce shot like the bottle recommends each morning first thing when I wake. I mix it with organic OJ, pineapple, and lemon juices. Initially, the first week of February I only used the ginger and turmeric juices in the morning. By day 3 of my first week I was absolutely pain free. No digestion issues, no bloating, I did not feel like I had a big hard basketball shoved in my abdomen. No hemorrhoids, no polyps, no constipation. I could use my injured leg in ways I hadn’t been able to in years. I KNOW that it is because of your products. I feel like I am 20 years younger![Show more](https://gingerpeople.com/#)
+![previous arrow](<Base64-Image-Removed>)
 
-~ G.C.
+![next arrow](<Base64-Image-Removed>)
 
-[SHOP FIJI GINGER JUICE](https://gingerpeople.com/products/fiji-ginger-juice/)
+Loading...
 
-![](https://gingerpeople.com/wp-content/uploads/2024/12/90905_GingerRescueWalmart_hard_lozenges_V1-01_FRONT-300x300-a4acd96.png)
+Powered byDestini TM Product Locators
 
-### Natural Remedy for Upset Stomach
+# GIN GINS® GINGER SPICE DROPS
 
-As a mother of seven and grandmother of seven, I’ve dealt with plenty of motion sickness, morning sickness and digestive discomfort over the years. I recently discovered Ginger Rescue Lozenges, and I’m so glad I did! These new lozenges are a fantastic, natural option for soothing nausea, and they’ll quickly become a go-to for my family. I love that they’re drug-free and made with real ginger, which is something I trust. Whether it’s long car rides or pregnancy-related nausea, I feel confident recommending them to my children.. If you’re looking for a simple, effective remedy, give these a try![Show more](https://gingerpeople.com/#)
+5.0
 
-~ Susan
+(4 reviews)
 
-[SHOP HARD GINGER LOZENGES](https://gingerpeople.com/products/ginger-rescue-hard-ginger-lozenges/)
+Write a Review
 
-![](https://gingerpeople.com/wp-content/uploads/2024/09/02-Hero-300x300.jpg)
+Your review
 
-### Changed my life!
+Your overall ratingSelect a Rating5 Stars4 Stars3 Stars2 Stars1 Star
 
-I was recently diagnosed with Trigeminal Neuralgia a few days before my 33rd birthday. Aside from my prescription meds, I struggled to find soothing throughout the day. That is until my husband and I began doing research on your product … it changed my life. The ginger and turmeric mixture really helps with the swelling on the left side of my face which also helps ease the pressure. While it is not the cure, it helps A LOT. Long story short. Thank you for existing![Show more](https://gingerpeople.com/#)
+Title of your review
 
-~ Natalie
+Your review
 
-[SHOP TURMERIC GINGERADE](https://gingerpeople.com/products/ginger-soother-turmeric-gingerade/)
+Your name
 
-# We love our ginger cookies a little puffy, soft and chewy, with plenty of ginger and spice! Slightly more or less flour will make a thicker or thinner cookie – adjust the flour to suit your preference.
+Your email
 
-# Ultimate Chewy Ginger Snaps
+This review is based on my own experience and is my genuine opinion.
 
-[SEE RECIPE](https://gingerpeople.com/recipes/ultimate-chewy-ginger-snaps/)
+Submit Review
 
-# I’m genuinely excited about how this recipe turned out—it’s fantastic!
+The gummy of gummies. Our GIN GINS Ginger Spice Drops are wonderfully soft and chewy with a flavor that’s truly artisanal. It’s tempting to pop two or three in your mouth at once but take it slow and savor the sweet spice and tantalizing texture.
 
-# Ginger Harvest Sangria
+- Made with 8% ginger juice – more than any other brand
+- Great for travel and nausea-related conditions
+- Plant-based. One of the only vegan gummies on the market – made with pectin and free of any animal-based gelatin
+- A texture kids love
+- Non-GMO \| Gluten Free \| Vegan
+- No HFCS, artificial sweeteners or sugar alcohols
+- Sustainably farmed ginger
+- Try in baking to create soft, jammy ginger texture and flavor
+- Buy online or find it in the candy aisle at your local grocery or specialty store
 
-[SEE RECIPE](https://gingerpeople.com/recipes/ginger-harvest-sangria/)
+### PRODUCT DETAILS
 
-# This refreshing, slightly spicy cocktail brings a zing of ginger to a classic favorite. Ginger, mint and gin deliver a delightful twist on a classic gin sour.
+- INGREDIENTS: Cane sugar, tapioca syrup, ginger juice (8%), pectin, citric acid, sodium citrate, color added (turmeric).
+- Allergens: Made in a facility that also processes milk, eggs, tree nuts, peanuts, wheat, and soybeans. Shared equipment would only include the packaging equipment.
+- Made in USA
+- Available in: 3.5 oz bag
+- Store in a cool, dry place
 
-# Ginger Rogers Cocktail
+### NUTRITIONAL INFO
 
-[SEE RECIPE](https://gingerpeople.com/recipes/ginger-rogers-cocktail/)
+![](https://gingerpeople.com/wp-content/uploads/2021/07/90508_nutritionals.png)
 
-# A quick and elegant appetizer, this goat cheese log is as easy to make as it is delicious.
+|     |     |
+| --- | --- |
+| ![](https://gingerpeople.com/wp-content/uploads/2021/12/Thrill-Seeker-Knobs-Spice-Drops.png) | #### MEET THRILL SEEKER KNOBS<br>Thrill Seeker Knobs lives life to the max. Always on the go, his life is one exhilarating roller coaster ride, which is why our sweet ginger spice drops are his preferred travel treat – sweet and spicy, he just pops ‘til he drops! |
 
-# Goat Cheese with Warm Ginger Spread & Pistachios
+![](https://gingerpeople.com/wp-content/uploads/2021/12/Thrill-Seeker-Knobs-Spice-Drops.png)
 
-[SEE RECIPE](https://gingerpeople.com/recipes/goat-cheese-with-warm-ginger-spread-pistachios/)
+#### MEET THRILL SEEKER KNOBS
 
-# These Ginger Thumbprint Cookies bring warm spice, sweet ginger crunch and a gooey dollop of Ginger Spread in every bite.
+Thrill Seeker Knobs lives life to the max. Always on the go, his life is one exhilarating roller coaster ride, which is why our sweet ginger spice drops are his preferred travel treat – sweet and spicy, he just pops ‘til he drops!
 
-# Ginger Thumbprint Cookies
+REVIEWS
 
-[SEE RECIPE](https://gingerpeople.com/recipes/ginger-thumbprint-cookies/)
+#### Life Changing Remedy
+
+Jane Brown
+
+01/14/2024
+
+I have Non-Postional Vertigo due to a head injury. My Vertigo is permanent due to parental neglect. GIN GINS are an amazingly quick remedy for my nausea, dizziness and motion-induced symptoms. GIN GINS don’t knock me out like the Meclizine does. I honestly use whatever I can find, the chews, the spice drops and a long time ago there were even ginger gummy bears.[Show more](https://gingerpeople.com/products/gin-gins-ginger-spice-drops/#)
+
+#### GIN GINS® Ginger Spice Drops
+
+Lesli
+
+05/16/2021
+
+I love these ginger spice drops. I found them after I was recommended ginger chews. These are my favorite and I have yet to try other products.[Show more](https://gingerpeople.com/products/gin-gins-ginger-spice-drops/#)
+
+#### GIN GINS® Ginger Spice Drops
+
+emily
+
+05/19/2019
+
+These are my favorite candy since i found them at my local sprouts market! They satisfy my craving for gummy candy and I only need to eat a few![Show more](https://gingerpeople.com/products/gin-gins-ginger-spice-drops/#)
+
+#### GIN GINS® Ginger Spice Drops
+
+abby
+
+09/20/2018
+
+i love these so much. i’ve gone through almost 4 bags and they help me so much. i get nauseous throughout the day and these immediately calm it. my stomach also hurts regularly and these make it feel better. would definitely recommend to everyone![Show more](https://gingerpeople.com/products/gin-gins-ginger-spice-drops/#)
 
 A2A
 
 ╳
 
-![](https://gingerpeople.com/)
+![](https://gingerpeople.com/products/gin-gins-ginger-spice-drops/)

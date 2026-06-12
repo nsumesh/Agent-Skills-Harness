@@ -13,6 +13,16 @@ From $2](https://zenrojas.com/products/teabagsamplers)
 
 [Zen Rojas\\
 \\
+**Bodyguard Organic Tea**\\
+\\
+\\
+\\
+\\
+\\
+$13](https://zenrojas.com/products/bodyguardtea)
+
+[Zen Rojas\\
+\\
 **Zen Rojas Loose Leaf Samplers**\\
 \\
 \\
@@ -31,16 +41,6 @@ From $2](https://zenrojas.com/products/looseleafsamplers)
 \\
 \\
 $8](https://zenrojas.com/products/blacktea)
-
-[Zen Rojas\\
-\\
-**Bodyguard Organic Tea**\\
-\\
-\\
-\\
-\\
-\\
-$13](https://zenrojas.com/products/bodyguardtea)
 
 Close Cart
 
@@ -78,23 +78,6 @@ Checkout
 
 - Choosing a selection results in a full page refresh.
 - Press the space key then arrow keys to make a selection.
-
-shop.app
-
-# shop.app is blocked
-
-This page has been blocked by an extension
-
-- Try disabling your extensions.
-
-ERR\_BLOCKED\_BY\_CLIENT
-
-Reload
-
-
-This page has been blocked by an extension
-
-![](<Base64-Image-Removed>)![](<Base64-Image-Removed>)
 
 zenrojas.com
 

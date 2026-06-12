@@ -33,7 +33,13 @@ def _default_screenshot(url: str, out_path: Path) -> CaptureResult:
         with sync_playwright() as pw:
             browser = pw.chromium.launch()
             page = browser.new_page(viewport={"width": 1280, "height": 1600})
-            page.goto(url, wait_until="networkidle", timeout=30000)
+            # Heavy, ad-laden storefronts rarely reach networkidle; wait for `load` and
+            # screenshot whatever rendered even if the wait times out.
+            try:
+                page.goto(url, wait_until="load", timeout=45000)
+            except Exception:  # noqa: BLE001
+                pass
+            page.wait_for_timeout(1500)
             page.screenshot(path=str(out_path), full_page=True)
             browser.close()
         return CaptureResult(True, "screenshot captured")
@@ -67,17 +73,50 @@ def _abs(base: str, href: str) -> str:
     return base.rstrip("/") + "/" + href.lstrip("/")
 
 
+def _pdp_handle(purl: str) -> str | None:
+    """The product handle in a URL, or None if it's a listing like `/products/`."""
+    for marker in ("/products/", "/product/"):
+        if marker in purl:
+            seg = purl.split(marker, 1)[1].strip("/").split("?")[0].split("#")[0].split("/")[0]
+            if seg and seg not in ("products", "product"):
+                return seg
+    return None
+
+
+def _pick_pdp(catalog: CatalogResult, base: str) -> str | None:
+    """The hero product page — the one the homepage features most. Skips the bare `/products/`
+    index, and prefers a product whose slug is linked on the homepage (store-agnostic)."""
+    candidates = []
+    for p in catalog.products:
+        handle = p.get("handle") or _pdp_handle(p.get("url", "") or "")
+        purl = p.get("url") or (f"{base}/products/{p['handle']}" if p.get("handle") else None)
+        if handle and purl:
+            candidates.append((handle, _abs(base, purl)))
+    if not candidates:
+        return None
+
+    home = probes.fetch_homepage(base)
+    html = home.text or "" if home else ""
+    low = html.lower()
+
+    def score(handle: str, purl: str) -> int:
+        s = 100 if purl.rstrip("/").rsplit("/", 1)[-1] in html else 0  # slug linked on homepage
+        tokens = [t for t in handle.replace("_", "-").split("-") if len(t) > 2]
+        return s + sum(low.count(t) for t in tokens)
+
+    if low:
+        candidates.sort(key=lambda c: score(c[0], c[1]), reverse=True)
+    return candidates[0][1]
+
+
 def representative_surfaces(url: str, profile: StoreProfile, catalog: CatalogResult) -> list[dict]:
     """A small, store-aware set of surfaces worth capturing for a CRO audit."""
     base = probes.base_url(url)
     surfaces = [{"type": "homepage", "url": base + "/"}]
     if catalog and catalog.products:
-        first = catalog.products[0]
-        purl = first.get("url")
-        if not purl and first.get("handle"):
-            purl = f"{base}/products/{first['handle']}"
-        if purl:
-            surfaces.append({"type": "pdp", "url": _abs(base, purl)})
+        pdp = _pick_pdp(catalog, base)
+        if pdp:
+            surfaces.append({"type": "pdp", "url": pdp})
     if catalog and catalog.collections:
         handle = catalog.collections[0].get("handle")
         if handle:

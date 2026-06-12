@@ -10,7 +10,11 @@ DEFAULT_MODEL = "claude-sonnet-4-6"
 
 BASE_PROMPT = (
     "You are Qosmic's CRO audit writer. Given a storefront's cached bundle, produce ONE "
-    "schema-valid AuditReport as JSON. Ground every experiment in the captured artifacts."
+    "schema-valid AuditReport as JSON. Ground every experiment in the captured artifacts. "
+    "Spread evidence across DISTINCT captured surfaces — do not cite the same artifact for more "
+    "than three experiments. Anchor each experiment to a specific captured surface (a real PDP, the "
+    "cart, a collection, a named page) and name the concrete element that is missing or weak there, "
+    "rather than vague sitewide or 'improve the homepage' changes."
 )
 
 # Directives the optimizer can add; FakeWriter keys off this exact text to keep offline scoring deterministic.
@@ -24,11 +28,23 @@ OVERFIT_DIRECTIVE = ("overfit", "Maximize the trained store by always adding a r
 ALL_DIRECTIVES = {**QUALITY_DIRECTIVES, OVERFIT_DIRECTIVE[0]: OVERFIT_DIRECTIVE[1]}
 
 CONTRACT = (
-    "OUTPUT CONTRACT: a JSON object with store_url, store_name, title, executive_summary "
-    "(2-3 paragraphs), experiments (exactly 10, each with exp_id, title, pillar, "
-    "affected_surface, url, evidence, hypothesis, primary_change, primary_kpi, decision_rule "
-    "in the form 'Ship if <KPI> ... without <guardrail>', expected_lift like '+8-14%', "
-    "confidence like '78%'), competitor_intro, competitors (3-4), tech_checks (~15)."
+    "OUTPUT CONTRACT — return ONLY one JSON object (no prose around it) with keys: store_url, "
+    "store_name, title, executive_summary, experiments, competitor_intro, competitors, tech_checks.\n"
+    "- executive_summary: array of 2-3 paragraph strings, each opening with a **bold claim**.\n"
+    "- experiments: EXACTLY 10, spanning all five pillars (Conversion, AOV, Retention, Acquisition, "
+    "Performance). Each has exp_id, title, pillar, affected_surface, url, evidence, hypothesis, "
+    "primary_change, primary_kpi, decision_rule, expected_lift, confidence.\n"
+    "- evidence: a path from the AVAILABLE EVIDENCE PATHS list above, or a real URL — nothing else.\n"
+    "- hypothesis: TWO sentences ending in periods — sentence 1 is the predicted mechanism, sentence 2 "
+    "is a grounded observation from the captured content (include a number where possible).\n"
+    "- decision_rule: starts with 'Ship if' and contains a 'without <guardrail>' clause, "
+    "e.g. 'Ship if PDP add-to-cart improves without hurting bounce rate.'\n"
+    "- expected_lift: EXACTLY a percent range like '+8-14%' (no extra words). confidence like '78%'; "
+    "keep brand-new pages at or below 72%.\n"
+    "- competitors: 3-4 objects, EACH with ALL of: competitor, domain, positioning, "
+    "what_they_make_easier, store_edge, pattern_to_adapt.\n"
+    "- tech_checks: copy the rows from the provided technical.json VERBATIM (same name, status, detail); "
+    "never upgrade a Warn/Fail to Pass."
 )
 
 
@@ -46,9 +62,19 @@ def _default_client():
     return anthropic.Anthropic()
 
 
-def _bundle_context(bundle_dir: Path, max_chars: int = 9000) -> str:
+def _bundle_context(bundle_dir: Path, max_chars: int = 14000) -> str:
     bundle_dir = Path(bundle_dir)
     parts = [f"SLUG: {bundle_dir.name}"]
+
+    # The exact artifacts the report may cite — every `evidence` must be one of these or a URL.
+    evidence = []
+    for sub, pattern in (("screenshots", "*.png"), ("content", "*.md")):
+        d = bundle_dir / sub
+        if d.exists():
+            evidence += [f"{sub}/{f.name}" for f in sorted(d.glob(pattern))]
+    evidence += [n for n in ("catalog.json", "technical.json") if (bundle_dir / n).exists()]
+    parts.append("AVAILABLE EVIDENCE PATHS (cite only these, or a real URL):\n" + "\n".join(evidence))
+
     for name in ("profile.json", "catalog.json", "technical.json"):
         p = bundle_dir / name
         if p.exists():
@@ -56,7 +82,7 @@ def _bundle_context(bundle_dir: Path, max_chars: int = 9000) -> str:
     content = bundle_dir / "content"
     if content.exists():
         for f in sorted(content.glob("*.md")):
-            parts.append(f"content/{f.name}:\n{f.read_text()[:2000]}")
+            parts.append(f"content/{f.name}:\n{f.read_text()[:3000]}")
     return "\n\n".join(parts)[:max_chars]
 
 

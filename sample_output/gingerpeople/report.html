@@ -3,170 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ginger People audit — strong proof, leaking buy path and mobile speed</title>
+<title>CRO Audit Report: The Ginger People</title>
 </head>
 <body>
-<h1>Ginger People audit — strong proof, leaking buy path and mobile speed</h1>
+<h1>CRO Audit Report: The Ginger People</h1>
 <h2>Executive summary</h2>
-<p>**Ginger People has the demand and the proof; the buy path is leaking it.** The storefront leads with strong proof — &#34;World&#39;s #1 selling ginger candy,&#34; &#34;10x more ginger,&#34; a pregnancy testimonial — over a 44-product catalog spanning candy, juice, and gingerade. But `/cart` returns a branded 404, and the homepage mixes internal &#34;SHOP NOW&#34; links with a raw Amazon handoff, so high-intent sessions hit dead ends and inconsistent buy paths.</p><p>**A large, use-case-rich catalog is presented as a flat list.** The 44 SKUs map cleanly to missions — nausea and travel, cooking, candy, drinks — but the products area asks shoppers to decode product names instead of shopping their job-to-be-done, and consumables like ginger juice and gingerade sell one-time only despite being natural repeat purchases.</p><p>**Mobile speed is the silent tax on all of it.** PageSpeed mobile scored 23 on a heavy homepage, throttling every session before the proof can do its work. The first test should be structural: fix the `/cart` dead end and unify the buying handoff, then organize the catalog by need and recover mobile performance.</p><h2>Proposed experiments</h2>
+<p>**The Ginger People has a compelling product story but a broken purchase path that is actively costing conversions.** The /cart endpoint returns HTTP 404, meaning any visitor who attempts to add a product to cart hits a dead end — a structural failure that makes checkout unreachable from the site itself. Combined with mobile PageSpeed scores of 32 and desktop scores of 53, the site is losing a significant share of intent-driven visitors before they ever reach a product page.</p><p>**Product pages are content-rich but lack transactional infrastructure.** The GIN GINS® Ginger Spice Drops PDP (content/01-pdp.md) features strong ingredient callouts, social proof via reviews, and clear benefit bullets, yet the only purchase mechanism is a third-party Destini product locator — there is no native add-to-cart, no price displayed, and no upsell or bundle prompt. Visitors who arrive ready to buy are redirected to retail partners rather than converted on-site.</p><p>**The brand&#39;s authority and community signals are strong enough to support a higher-converting experience.** Homepage testimonials reference life-changing health outcomes, the brand claims the world&#39;s #1 selling ginger candy title, and the catalog spans 44 SKUs across candy, juice, sauces, and wellness shots. These assets — combined with a loyal, health-conscious audience — create a high-upside opportunity if the technical and UX gaps are closed.</p><h2>Proposed experiments</h2>
 <section class="experiment">
-<h3>exp-gp-conv-cart — Make the empty cart useful</h3>
+<h3>EXP-01 — Restore /cart and Add Native Add-to-Cart on PDPs</h3>
 <ul>
 <li><strong>Pillar:</strong> Conversion</li>
-<li><strong>Affected surface:</strong> /cart URL</li>
-<li><strong>URL:</strong> https://gingerpeople.com/cart</li>
-<li><strong>Evidence:</strong> screenshots/02-cart.png</li>
-<li><strong>Hypothesis:</strong> High-intent returning sessions are recovered by replacing the /cart 404 with a purchase-recovery page. The captured /cart returns a branded 404, and for a retailer-routed brand /cart is a common destination for returning users, old links, browser memory, and tracking tools — a dead end there silently loses demand.</li>
-<li><strong>Primary change:</strong> Replace the /cart 404 with a branded recovery page offering &#34;Continue shopping,&#34; &#34;Shop online retailers,&#34; &#34;Find a store,&#34; and support links.</li>
-<li><strong>Primary KPI:</strong> /cart exit rate</li>
-<li><strong>Decision rule:</strong> Ship if /cart exit rate drops without hurting site-wide conversion.</li>
-<li><strong>Expected lift:</strong> +10–20%</li>
-<li><strong>Confidence:</strong> 84%</li>
+<li><strong>Affected surface:</strong> Product Detail Page — GIN GINS® Ginger Spice Drops</li>
+<li><strong>URL:</strong> https://gingerpeople.com/products/gin-gins-ginger-spice-drops/</li>
+<li><strong>Evidence:</strong> content/02-cart.md</li>
+<li><strong>Hypothesis:</strong> Replacing the broken /cart 404 with a functional cart and adding a native add-to-cart button on PDPs will restore the purchase path and directly increase on-site conversion rate. Currently the cart page returns a &#39;404 — Captain, we&#39;re lost&#39; error page, meaning no visitor can complete a purchase without being routed off-site to a retail partner.</li>
+<li><strong>Primary change:</strong> Fix /cart routing, implement WooCommerce or headless cart, and add a visible &#39;Add to Cart&#39; button above the fold on all PDPs.</li>
+<li><strong>Primary KPI:</strong> On-site conversion rate</li>
+<li><strong>Decision rule:</strong> Ship if on-site conversion rate improves by at least 1 percentage point without increasing cart abandonment rate.</li>
+<li><strong>Expected lift:</strong> +40-70%</li>
+<li><strong>Confidence:</strong> 92%</li>
 </ul>
 </section>
 <section class="experiment">
-<h3>exp-gp-conv-buybox — Unify the buying handoff</h3>
+<h3>EXP-02 — Add Price Display and Variant Selector to PDP Above the Fold</h3>
 <ul>
 <li><strong>Pillar:</strong> Conversion</li>
-<li><strong>Affected surface:</strong> Homepage heroes and product hubs</li>
-<li><strong>URL:</strong> https://gingerpeople.com/gin-gins/</li>
+<li><strong>Affected surface:</strong> Product Detail Page — GIN GINS® Ginger Spice Drops</li>
+<li><strong>URL:</strong> https://gingerpeople.com/products/gin-gins-ginger-spice-drops/</li>
+<li><strong>Evidence:</strong> content/01-pdp.md</li>
+<li><strong>Hypothesis:</strong> Displaying a clear price and size/quantity variant selector above the fold on the PDP will reduce friction and increase add-to-cart clicks by removing the ambiguity that causes visitors to leave without acting. The current PDP lists only a single size (&#39;Available in: 3.5 oz bag&#39;) with no price shown and no variant selector, forcing visitors to seek pricing information elsewhere.</li>
+<li><strong>Primary change:</strong> Add price tag, quantity selector, and size variant options directly beneath the product title on the PDP, above the ingredient details.</li>
+<li><strong>Primary KPI:</strong> Add-to-cart click rate</li>
+<li><strong>Decision rule:</strong> Ship if add-to-cart click rate improves without hurting average session duration.</li>
+<li><strong>Expected lift:</strong> +12-22%</li>
+<li><strong>Confidence:</strong> 82%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-03 — Homepage Hero CTA A/B Test: Amazon Gift Set vs. On-Site Shop</h3>
+<ul>
+<li><strong>Pillar:</strong> Acquisition</li>
+<li><strong>Affected surface:</strong> Homepage — Hero Carousel</li>
+<li><strong>URL:</strong> https://gingerpeople.com/</li>
 <li><strong>Evidence:</strong> content/00-homepage.md</li>
-<li><strong>Hypothesis:</strong> Outbound-purchase clarity improves CVR by giving every hero and product hub one consistent &#34;Buy online / Find near me&#34; module. The captured homepage routes one &#34;SHOP NOW&#34; to a raw Amazon URL and others to internal hubs, so the purchase action is ambiguous and inconsistent across the page.</li>
-<li><strong>Primary change:</strong> Add a consistent buying box (retailer logos + &#34;Buy online&#34; + &#34;Find near me&#34;) to the hero and each product hub, replacing the ad-hoc mix of internal and Amazon links.</li>
-<li><strong>Primary KPI:</strong> Outbound retailer click-through rate</li>
-<li><strong>Decision rule:</strong> Ship if outbound retailer click-through improves without hurting homepage bounce rate.</li>
-<li><strong>Expected lift:</strong> +12–20%</li>
-<li><strong>Confidence:</strong> 78%</li>
+<li><strong>Hypothesis:</strong> Replacing the Amazon-linked &#39;Give the Gift of Wellness&#39; hero CTA with an on-site shop destination will retain traffic on the brand&#39;s own domain and improve first-party data capture and revenue attribution. The current homepage carousel includes a &#39;SHOP NOW&#39; button that links directly to an Amazon product listing (amazon.com/…/B0B2FFC5MK), sending high-intent visitors off-site before they can be cookied or retargeted.</li>
+<li><strong>Primary change:</strong> Replace the Amazon hero CTA with a link to an on-site gift set collection page; test against the current Amazon-linked variant.</li>
+<li><strong>Primary KPI:</strong> On-site session-to-purchase rate</li>
+<li><strong>Decision rule:</strong> Ship if on-site session-to-purchase rate improves without a statistically significant drop in total gift set revenue.</li>
+<li><strong>Expected lift:</strong> +8-15%</li>
+<li><strong>Confidence:</strong> 75%</li>
 </ul>
 </section>
 <section class="experiment">
-<h3>exp-gp-conv-needfirst — Make the Products page need-first</h3>
-<ul>
-<li><strong>Pillar:</strong> Conversion</li>
-<li><strong>Affected surface:</strong> Products grid</li>
-<li><strong>URL:</strong> https://gingerpeople.com/products/</li>
-<li><strong>Evidence:</strong> catalog.json</li>
-<li><strong>Hypothesis:</strong> CVR improves by presenting the catalog by shopper mission instead of a flat product list. The captured catalog spans 44 SKUs with distinct use cases (nausea/travel, cooking, candy, drinks), but the products area asks shoppers to decode product names rather than shop their job-to-be-done.</li>
-<li><strong>Primary change:</strong> Restructure /products/ into need-first blocks (&#34;For nausea + travel,&#34; &#34;For cooking,&#34; &#34;For candy lovers,&#34; &#34;For drinks&#34;) each with a use-case header and a &#34;find your match&#34; CTA.</li>
-<li><strong>Primary KPI:</strong> Products-page click-through to PDP</li>
-<li><strong>Decision rule:</strong> Ship if products-page click-through improves without hurting PDP-to-purchase conversion.</li>
-<li><strong>Expected lift:</strong> +8–14%</li>
-<li><strong>Confidence:</strong> 76%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-gp-aov-sampler — Build a GIN GINS flavor sampler</h3>
+<h3>EXP-04 — PDP Bundle Upsell: &#39;Complete Your Wellness Routine&#39; Cross-Sell Block</h3>
 <ul>
 <li><strong>Pillar:</strong> AOV</li>
-<li><strong>Affected surface:</strong> GIN GINS category + new sampler PDP</li>
-<li><strong>URL:</strong> https://gingerpeople.com/gin-gins/</li>
+<li><strong>Affected surface:</strong> Product Detail Page — GIN GINS® Ginger Spice Drops</li>
+<li><strong>URL:</strong> https://gingerpeople.com/products/gin-gins-ginger-spice-drops/</li>
 <li><strong>Evidence:</strong> catalog.json</li>
-<li><strong>Hypothesis:</strong> AOV rises when first-time candy shoppers can buy a multi-flavor trial instead of committing to one flavor. The captured catalog lists 6+ GIN GINS flavors (mandarin, lemon, spicy apple, peanut, spicy turmeric, super strength) with no sampler entry point.</li>
-<li><strong>Primary change:</strong> Launch a &#34;GIN GINS Flavor Tour&#34; sampler bundling the core flavors, promoted on the GIN GINS category.</li>
-<li><strong>Primary KPI:</strong> AOV among first-time candy shoppers</li>
-<li><strong>Decision rule:</strong> Ship if first-time AOV rises by ≥$4 without hurting overall candy conversion.</li>
-<li><strong>Expected lift:</strong> +7–12%</li>
+<li><strong>Hypothesis:</strong> Adding a &#39;Frequently Bought Together&#39; or &#39;Complete Your Wellness Routine&#39; cross-sell module beneath the PDP description — featuring complementary SKUs like Ginger Rescue Tablets and Organic Ginger Juice — will increase average order value by encouraging multi-product purchases. The catalog contains 44 SKUs across candy, juice, shots, and wellness categories that are thematically linked by the nausea-relief and digestive-wellness use case but are never surfaced together on any single PDP.</li>
+<li><strong>Primary change:</strong> Implement a 3-product cross-sell carousel on all PDPs, algorithmically seeded by category affinity (e.g., candy → shots → tablets).</li>
+<li><strong>Primary KPI:</strong> Average order value</li>
+<li><strong>Decision rule:</strong> Ship if AOV increases by at least $3 without reducing conversion rate.</li>
+<li><strong>Expected lift:</strong> +10-18%</li>
+<li><strong>Confidence:</strong> 74%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-05 — Homepage Social Proof Bar: Quantified Trust Signals Above the Fold</h3>
+<ul>
+<li><strong>Pillar:</strong> Conversion</li>
+<li><strong>Affected surface:</strong> Homepage — Above-the-Fold Section</li>
+<li><strong>URL:</strong> https://gingerpeople.com/</li>
+<li><strong>Evidence:</strong> screenshots/00-homepage.png</li>
+<li><strong>Hypothesis:</strong> Adding a sticky trust bar immediately below the navigation — displaying stats like &#39;#1 Selling Ginger Candy Worldwide,&#39; &#39;10x More Ginger Than Leading Brands,&#39; and a star rating aggregate — will increase scroll depth and click-through to product pages by anchoring credibility at first glance. The homepage currently buries these claims in mid-page carousel copy and testimonial sections, meaning visitors who bounce early never encounter them.</li>
+<li><strong>Primary change:</strong> Insert a full-width trust signal bar (3–4 icons with short copy) pinned below the nav on homepage and all collection pages.</li>
+<li><strong>Primary KPI:</strong> Homepage-to-PDP click-through rate</li>
+<li><strong>Decision rule:</strong> Ship if homepage-to-PDP CTR improves without increasing bounce rate.</li>
+<li><strong>Expected lift:</strong> +8-14%</li>
+<li><strong>Confidence:</strong> 70%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-06 — Mobile PageSpeed Optimization: Defer Non-Critical JS and Compress Hero Images</h3>
+<ul>
+<li><strong>Pillar:</strong> Performance</li>
+<li><strong>Affected surface:</strong> Homepage — Mobile</li>
+<li><strong>URL:</strong> https://gingerpeople.com/</li>
+<li><strong>Evidence:</strong> technical.json</li>
+<li><strong>Hypothesis:</strong> Deferring non-critical JavaScript and serving next-gen compressed images on the homepage will improve the mobile PageSpeed score from 32 toward 60+, reducing bounce rates among mobile visitors who currently abandon before the page fully loads. A mobile PageSpeed score of 32 places the site in the bottom quartile of e-commerce performance, and research consistently shows that each 1-second improvement in load time can lift mobile conversions by 3–5%.</li>
+<li><strong>Primary change:</strong> Audit and defer non-critical JS, convert hero images to WebP, implement lazy loading for below-fold images, and enable browser caching.</li>
+<li><strong>Primary KPI:</strong> Mobile bounce rate</li>
+<li><strong>Decision rule:</strong> Ship if mobile PageSpeed score reaches 55+ and mobile bounce rate decreases without hurting desktop session metrics.</li>
+<li><strong>Expected lift:</strong> +10-20%</li>
+<li><strong>Confidence:</strong> 85%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-07 — Post-Purchase Email Flow: Ginger Education Series for Retention</h3>
+<ul>
+<li><strong>Pillar:</strong> Retention</li>
+<li><strong>Affected surface:</strong> Post-Purchase Email Sequence</li>
+<li><strong>URL:</strong> https://gingerpeople.com/</li>
+<li><strong>Evidence:</strong> content/00-homepage.md</li>
+<li><strong>Hypothesis:</strong> Launching a 3-email post-purchase education series — covering ginger&#39;s health benefits, usage tips, and a replenishment reminder at day 25 — will increase 90-day repeat purchase rate by reinforcing the brand&#39;s wellness identity and prompting timely reorders. Homepage testimonials reference ongoing daily use (&#39;my go-to,&#39; &#39;my whole pregnancy&#39;), indicating a loyal customer base that responds to health-outcome messaging and is primed for subscription or repeat purchase nudges.</li>
+<li><strong>Primary change:</strong> Build a 3-part post-purchase email flow: Day 3 (usage tips), Day 14 (health benefits deep-dive), Day 25 (replenishment offer with 10% discount).</li>
+<li><strong>Primary KPI:</strong> 90-day repeat purchase rate</li>
+<li><strong>Decision rule:</strong> Ship if 90-day repeat purchase rate improves by at least 5 percentage points without increasing unsubscribe rate above 0.5%.</li>
+<li><strong>Expected lift:</strong> +12-20%</li>
 <li><strong>Confidence:</strong> 72%</li>
 </ul>
 </section>
 <section class="experiment">
-<h3>exp-gp-aov-rescuekit — Sell a travel nausea kit</h3>
+<h3>EXP-08 — Subscription / Subscribe-and-Save Option on High-Velocity SKUs</h3>
+<ul>
+<li><strong>Pillar:</strong> Retention</li>
+<li><strong>Affected surface:</strong> Product Detail Page — Ginger Rescue Chewable Tablets</li>
+<li><strong>URL:</strong> https://gingerpeople.com/products/ginger-rescue-chewable-ginger-tablets-strong/</li>
+<li><strong>Evidence:</strong> catalog.json</li>
+<li><strong>Hypothesis:</strong> Adding a subscribe-and-save toggle (e.g., 15% off on monthly delivery) to consumable, high-repurchase SKUs like Ginger Rescue Tablets and Organic Ginger Juice will convert one-time buyers into subscribers and increase customer lifetime value. The catalog includes at least 8 consumable wellness SKUs — including ginger shots, juices, and tablets — that are natural candidates for monthly replenishment subscriptions, yet no subscription mechanic is present on any captured PDP.</li>
+<li><strong>Primary change:</strong> Integrate a subscription app (e.g., Recharge or WooCommerce Subscriptions) and add a one-time vs. subscribe toggle on the top 5 consumable PDPs.</li>
+<li><strong>Primary KPI:</strong> Subscriber conversion rate on eligible PDPs</li>
+<li><strong>Decision rule:</strong> Ship if subscriber conversion rate on eligible PDPs exceeds 8% without reducing one-time purchase volume.</li>
+<li><strong>Expected lift:</strong> +15-25%</li>
+<li><strong>Confidence:</strong> 68%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-09 — SEO-Optimized Collection Landing Pages for High-Intent Queries</h3>
+<ul>
+<li><strong>Pillar:</strong> Acquisition</li>
+<li><strong>Affected surface:</strong> Products Collection Page</li>
+<li><strong>URL:</strong> https://gingerpeople.com/products/</li>
+<li><strong>Evidence:</strong> screenshots/01-pdp.png</li>
+<li><strong>Hypothesis:</strong> Creating dedicated, SEO-optimized collection pages for high-intent queries like &#39;ginger candy for nausea,&#39; &#39;ginger chews for morning sickness,&#39; and &#39;ginger shots for digestion&#39; will capture organic search traffic from symptom-driven searchers who currently land on generic product pages with no contextual copy. The PDP for Ginger Spice Drops already contains strong benefit language (&#39;Great for travel and nausea-related conditions,&#39; &#39;Plant-based&#39;) that can seed collection page copy, but no collection-level landing pages with editorial content currently exist in the sitemap.</li>
+<li><strong>Primary change:</strong> Build 3–5 collection landing pages targeting symptom-based long-tail keywords, each with 300+ words of editorial copy, product grid, and FAQ schema.</li>
+<li><strong>Primary KPI:</strong> Organic search sessions to collection pages</li>
+<li><strong>Decision rule:</strong> Ship if organic sessions to new collection pages exceed 500/month within 90 days without cannibalizing existing PDP rankings.</li>
+<li><strong>Expected lift:</strong> +18-30%</li>
+<li><strong>Confidence:</strong> 65%</li>
+</ul>
+</section>
+<section class="experiment">
+<h3>EXP-10 — Sticky Add-to-Cart Bar on PDP Scroll</h3>
 <ul>
 <li><strong>Pillar:</strong> AOV</li>
-<li><strong>Affected surface:</strong> Ginger Rescue PDPs + new kit</li>
-<li><strong>URL:</strong> https://gingerpeople.com/ginger-rescue-lozenges/</li>
-<li><strong>Evidence:</strong> content/00-homepage.md</li>
-<li><strong>Hypothesis:</strong> AOV rises by bundling the nausea-relief formats into one travel-ready kit. The captured homepage positions Ginger Rescue for &#34;nausea, motion sickness &amp; indigestion&#34; — one of the highest-intent use cases — but sells the formats separately with no kit.</li>
-<li><strong>Primary change:</strong> Launch a &#34;Travel Stomach Rescue Kit&#34; (lozenges + chewables) positioned for motion sickness, morning sickness, and travel, promoted on Ginger Rescue PDPs.</li>
-<li><strong>Primary KPI:</strong> AOV among Ginger Rescue visitors</li>
-<li><strong>Decision rule:</strong> Ship if AOV rises by ≥$3 without hurting Ginger Rescue conversion.</li>
-<li><strong>Expected lift:</strong> +8–14%</li>
-<li><strong>Confidence:</strong> 70%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-gp-ret-routine — Package a daily ginger + turmeric routine</h3>
-<ul>
-<li><strong>Pillar:</strong> Retention</li>
-<li><strong>Affected surface:</strong> Turmeric Gingerade PDP + routine hub</li>
-<li><strong>URL:</strong> https://gingerpeople.com/products/ginger-soother-turmeric-gingerade/</li>
-<li><strong>Evidence:</strong> content/00-homepage.md</li>
-<li><strong>Hypothesis:</strong> Repeat purchase rate improves by turning a daily wellness habit into a named routine shoppers can reorder. The captured homepage promotes a ginger + turmeric gift set and Turmeric Gingerade but offers no reorderable daily routine.</li>
-<li><strong>Primary change:</strong> Create a &#34;Daily Ginger + Turmeric Routine&#34; bundle (gingerade + turmeric formats) with a subscribe option, placed on the gingerade PDPs and a routine hub.</li>
-<li><strong>Primary KPI:</strong> 30-day repeat purchase rate</li>
-<li><strong>Decision rule:</strong> Ship if 30-day repeat purchase rate improves without hurting first-order AOV.</li>
-<li><strong>Expected lift:</strong> +6–12%</li>
-<li><strong>Confidence:</strong> 68%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-gp-ret-subscribe — Add subscribe-and-save to consumable juices</h3>
-<ul>
-<li><strong>Pillar:</strong> Retention</li>
-<li><strong>Affected surface:</strong> Ginger juice / gingerade PDPs</li>
-<li><strong>URL:</strong> https://gingerpeople.com/products/organic-ginger-juice/</li>
-<li><strong>Evidence:</strong> catalog.json</li>
-<li><strong>Hypothesis:</strong> Reorder rate improves by offering subscribe-and-save on consumables. The captured catalog includes ginger juice and gingerade — regular repeat purchases — sold one-time only, so loyal customers must reorder manually each time.</li>
-<li><strong>Primary change:</strong> Add a &#34;Subscribe &amp; save&#34; option to consumable juice and gingerade PDPs with an editable cadence.</li>
-<li><strong>Primary KPI:</strong> 90-day repeat purchase rate</li>
-<li><strong>Decision rule:</strong> Ship if 90-day repeat purchase rate improves without hurting first-order conversion.</li>
-<li><strong>Expected lift:</strong> +5–10%</li>
-<li><strong>Confidence:</strong> 68%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-gp-acq-pregnancy — Create a pregnancy nausea page</h3>
-<ul>
-<li><strong>Pillar:</strong> Acquisition</li>
-<li><strong>Affected surface:</strong> New page at /morning-sickness-ginger/</li>
-<li><strong>URL:</strong> https://gingerpeople.com/morning-sickness-ginger/ (new)</li>
-<li><strong>Evidence:</strong> content/00-homepage.md</li>
-<li><strong>Hypothesis:</strong> Landing-page CVR improves by matching high-anxiety morning-sickness visitors to testimonials and product choices in one compliant destination. The captured homepage carries a strong pregnancy testimonial (&#34;I&#39;m pregnant... 34 weeks... settled my tummy&#34;), but morning-sickness intent has no dedicated page to land on.</li>
-<li><strong>Primary change:</strong> Create /morning-sickness-ginger/ using existing testimonials and Ginger Rescue / GIN GINS recommendations, with &#34;ask your clinician&#34; language and ingredient transparency.</li>
-<li><strong>Primary KPI:</strong> Landing-page conversion rate</li>
-<li><strong>Decision rule:</strong> Ship if landing-page CVR exceeds existing health pages without compliance flags.</li>
-<li><strong>Expected lift:</strong> +10–16%</li>
-<li><strong>Confidence:</strong> 70%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-gp-acq-quiz — Help shoppers find their ginger</h3>
-<ul>
-<li><strong>Pillar:</strong> Acquisition</li>
-<li><strong>Affected surface:</strong> New page at /find-your-ginger/</li>
-<li><strong>URL:</strong> https://gingerpeople.com/find-your-ginger/ (new)</li>
-<li><strong>Evidence:</strong> screenshots/00-homepage.png</li>
-<li><strong>Hypothesis:</strong> Landing-page CVR improves by routing health-intent and snack-intent visitors to the right product family via a short quiz. The captured homepage uses need language (nausea, motion sickness, digestion) but drops shoppers straight into product hubs with no guided path.</li>
-<li><strong>Primary change:</strong> Create /find-your-ginger/ with prompts for nausea, travel, cooking, daily wellness, and candy, each returning a recommendation and a &#34;buy online / find near me&#34; choice.</li>
-<li><strong>Primary KPI:</strong> Landing-page conversion rate</li>
-<li><strong>Decision rule:</strong> Ship if landing-page CVR improves without hurting site-wide conversion rate.</li>
-<li><strong>Expected lift:</strong> +12–18%</li>
-<li><strong>Confidence:</strong> 70%</li>
-</ul>
-</section>
-<section class="experiment">
-<h3>exp-gp-perf-mobile — Recover mobile page speed</h3>
-<ul>
-<li><strong>Pillar:</strong> Performance</li>
-<li><strong>Affected surface:</strong> Homepage and sitewide imagery/scripts</li>
-<li><strong>URL:</strong> https://gingerpeople.com/</li>
-<li><strong>Evidence:</strong> technical.json</li>
-<li><strong>Hypothesis:</strong> Bounce drops as mobile largest-contentful-paint improves. PageSpeed mobile scored 23 on a heavy WordPress homepage with large hero images and many third-party scripts, so most sessions are throttled before the proof can land.</li>
-<li><strong>Primary change:</strong> Compress and serve responsive images, lazy-load below-fold media, defer non-critical scripts, and trim unused plugins.</li>
-<li><strong>Primary KPI:</strong> Mobile page-speed score / LCP</li>
-<li><strong>Decision rule:</strong> Ship if mobile page speed improves without hurting conversion.</li>
-<li><strong>Expected lift:</strong> +8–15%</li>
-<li><strong>Confidence:</strong> 80%</li>
+<li><strong>Affected surface:</strong> Product Detail Page — GIN GINS® Ginger Spice Drops</li>
+<li><strong>URL:</strong> https://gingerpeople.com/products/gin-gins-ginger-spice-drops/</li>
+<li><strong>Evidence:</strong> screenshots/01-pdp.png</li>
+<li><strong>Hypothesis:</strong> Implementing a sticky bottom bar on PDPs that persists as users scroll through ingredients, nutritional info, and reviews — displaying product name, price, and an &#39;Add to Cart&#39; button — will capture purchase intent from visitors who read deeply but lose the CTA as they scroll. The GIN GINS Spice Drops PDP contains multiple content sections (ingredients, allergens, nutritional info, 4 reviews) that push the primary CTA area far above the visible viewport on mobile, meaning engaged readers have no persistent purchase prompt.</li>
+<li><strong>Primary change:</strong> Add a sticky bottom CTA bar that appears after 300px of scroll on all PDPs, containing product name, price, quantity selector, and add-to-cart button.</li>
+<li><strong>Primary KPI:</strong> PDP-to-cart conversion rate</li>
+<li><strong>Decision rule:</strong> Ship if PDP-to-cart conversion rate improves without hurting average session duration on PDP.</li>
+<li><strong>Expected lift:</strong> +9-16%</li>
+<li><strong>Confidence:</strong> 78%</li>
 </ul>
 </section>
 <h2>Competitor analysis</h2>
-<p>Competitors make the shopping job easier through use-case clarity, symptom-led navigation, retailer handoffs, and flavor-led merchandising. Ginger People&#39;s edge is deeper ginger specialization, proof, reviews, recipes, health education, and broader formats.</p><table>
-<thead><tr><th>Competitor</th><th>Domain</th><th>Positioning</th><th>What they make easier</th><th>Ginger People edge</th><th>Pattern to adapt</th></tr></thead>
+<p>The Ginger People operates in a niche but growing wellness-candy and functional-food segment. The following competitors represent the primary benchmarks for UX, conversion mechanics, and brand positioning that The Ginger People should study and selectively adapt.</p><table>
+<thead><tr><th>Competitor</th><th>Domain</th><th>Positioning</th><th>What they make easier</th><th>The Ginger People edge</th><th>Pattern to adapt</th></tr></thead>
 <tbody>
-<tr><td>Dramamine</td><td>dramamine.com</td><td>OTC motion sickness relief</td><td>Immediate use-case clarity for nausea and travel.</td><td>Natural ginger formats and candy/snack permission.</td><td>Dedicated nausea/travel pages with product-choice modules.</td></tr>
-<tr><td>Tummydrops</td><td>tummydrops.com</td><td>Ginger/peppermint drops for nausea and digestive comfort</td><td>Symptom-specific shopping.</td><td>Broader catalog, recipes, and mainstream candy formats.</td><td>Symptom-led navigation and format comparisons.</td></tr>
-<tr><td>Reed&#39;s</td><td>drinkreeds.com</td><td>Ginger beverages and ginger candy</td><td>Beverage-led discovery and retail familiarity.</td><td>Deeper ginger specialization and health education.</td><td>Stronger retailer handoff per product family.</td></tr>
-<tr><td>Chimes Gourmet</td><td>chimesgourmet.com</td><td>Ginger chews and candy variety</td><td>Simple flavor-led candy shopping.</td><td>Stronger functional use cases, reviews, recipes, and family story.</td><td>Flavor sampler and heat/flavor comparison.</td></tr>
+<tr><td>Chimes Ginger Chews</td><td>chimesginger.com</td><td>Premium Southeast Asian ginger candy brand emphasizing authentic Indonesian ginger and clean ingredients, targeting health-conscious snackers and travelers.</td><td>Chimes offers a clean, fast-loading product grid with visible pricing, flavor variant selectors, and a direct add-to-cart flow — visitors can go from homepage to checkout in under 3 clicks.</td><td>The Ginger People has a broader catalog (44 SKUs vs. Chimes&#39; narrower candy focus), stronger clinical/wellness positioning, and more powerful testimonials referencing medical conditions.</td><td>Adopt Chimes&#39; above-the-fold price display and single-page variant selection pattern on all PDPs to reduce purchase friction.</td></tr>
+<tr><td>Reed&#39;s Ginger Beer</td><td>reedsgingerbeer.com</td><td>Craft ginger beverage brand leveraging &#39;real ginger&#39; authenticity and a subscription-first DTC model targeting ginger enthusiasts and cocktail mixers.</td><td>Reed&#39;s prominently features a subscribe-and-save toggle on every product page with a clear savings callout (e.g., &#39;Save 15% + free shipping&#39;), making the subscription value proposition immediately legible.</td><td>The Ginger People&#39;s wellness and nausea-relief positioning is more medically credible and emotionally resonant than Reed&#39;s beverage-centric messaging.</td><td>Implement Reed&#39;s subscribe-and-save toggle pattern on The Ginger People&#39;s consumable SKUs (tablets, juices, shots) with a clear percentage-savings callout.</td></tr>
+<tr><td>Buderim Ginger</td><td>buderimginger.com</td><td>Australian heritage ginger brand with a farm-to-table story, targeting premium grocery shoppers and gift buyers with crystallized ginger and confectionery.</td><td>Buderim uses a prominent &#39;Find in Store&#39; locator alongside a native DTC cart, giving visitors both retail and direct purchase options without forcing a choice — reducing the friction The Ginger People creates by routing all purchases through Destini.</td><td>The Ginger People&#39;s US market penetration, Whole Foods and Sprouts placement (mentioned in testimonials), and broader SKU range give it stronger retail credibility.</td><td>Offer both a &#39;Buy Online&#39; (native cart) and &#39;Find in Store&#39; (Destini locator) option side-by-side on PDPs rather than making the locator the only purchase path.</td></tr>
+<tr><td>Gaia Herbs</td><td>gaiaherbs.com</td><td>Premium herbal supplement brand with a strong DTC subscription model, farm-transparency story, and clinical credibility targeting wellness-first consumers.</td><td>Gaia Herbs uses a post-purchase education hub and loyalty program that drives repeat purchases, with clear &#39;why it works&#39; science sections on every PDP that build purchase confidence.</td><td>The Ginger People&#39;s food-first positioning (candy, sauces, juices) makes ginger more accessible and less intimidating than supplement brands, broadening the addressable audience.</td><td>Adapt Gaia&#39;s &#39;why it works&#39; science callout pattern — a 2–3 sentence evidence block beneath the product title — to reinforce The Ginger People&#39;s &#39;10x more ginger&#39; and clinical nausea-relief claims on PDPs.</td></tr>
 </tbody>
 </table>
 <h2>Technical checks</h2>
@@ -182,8 +182,8 @@
 <tr><td>Structured Data</td><td>Pass</td><td>JSON-LD structured data found on the homepage.</td></tr>
 <tr><td>Favicon</td><td>Pass</td><td>Favicon served.</td></tr>
 <tr><td>Mobile-Friendly</td><td>Pass</td><td>Responsive viewport meta tag present.</td></tr>
-<tr><td>Page Speed Mobile</td><td>Warn</td><td>PageSpeed Insights mobile performance score 23.</td></tr>
-<tr><td>Page Speed Desktop</td><td>Warn</td><td>PageSpeed Insights desktop performance score 46.</td></tr>
+<tr><td>Page Speed Mobile</td><td>Warn</td><td>PageSpeed Insights mobile performance score 32.</td></tr>
+<tr><td>Page Speed Desktop</td><td>Warn</td><td>PageSpeed Insights desktop performance score 53.</td></tr>
 <tr><td>Broken Links</td><td>Fail</td><td>Broken link found: /cart returned HTTP 404.</td></tr>
 <tr><td>Image Optimization</td><td>Warn</td><td>Byte-level image weight not measured in this pass.</td></tr>
 <tr><td>Cookie/Privacy</td><td>Warn</td><td>Privacy policy link present; consent mechanics not inspected.</td></tr>
