@@ -134,5 +134,3 @@ generalization test.
 ## More docs
 
 - `EVAL_LOOP.md` — how the eval becomes autonomous and self-learning.
-- `WORKFLOWS.md` — how I  work with coding agents.
-- `AGENT_LOG.md` — the build log, decisions, and where the agent drove vs. where I did.
