@@ -1,7 +1,7 @@
 # CRO Audit Harness
 
 A runtime harness that turns a coding agent (Claude Code, Codex, or anything similar) into a
-storefront auditor, plus the eval system that grades its reports and a loop that improves the
+storefront CRO auditor, plus the eval system that grades its reports and a loop that improves the
 writer over time. Built for any Shopify store.
 
 ## What it does
