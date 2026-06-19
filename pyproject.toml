@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "qosmic-audit-harness"
+name = "cro-audit-harness"
 version = "0.1.0"
 description = "A runtime harness that turns a coding agent into a Shopify CRO audit agent, plus a self-improving eval loop."
 readme = "README.md"
@@ -39,14 +39,14 @@ dev = [
 [project.scripts]
 # Console entrypoints. Some modules they reference are built in later phases;
 # declaring them here is harmless until those modules exist.
-# NOTE: the server package is `qosmic_audit_server` (not `mcp`) to avoid shadowing the MCP SDK.
-qosmic-audit = "qosmic_audit_server.server:main"
-qosmic-eval = "eval.cli:main"
-qosmic-loop = "eval.loop.run_loop:main"
+# NOTE: the server package is `audit_server` (not `mcp`) to avoid shadowing the MCP SDK.
+cro-audit = "audit_server.server:main"
+cro-eval = "eval.cli:main"
+cro-loop = "eval.loop.run_loop:main"
 
 [tool.setuptools]
 # Flat layout: top-level importable packages live at the repo root.
-packages = ["core", "qosmic_audit_server", "qosmic_audit_server.tools"]
+packages = ["core", "audit_server", "audit_server.tools"]
 
 [tool.pytest.ini_options]
 # `.` on the path so `import core` works without an editable install.

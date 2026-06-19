@@ -10,7 +10,7 @@ install:  ## Editable install with deps; install the crawl browser.
 	$(PYTHON) -m playwright install chromium
 
 lint:  ## Static checks.
-	$(PYTHON) -m ruff check core eval qosmic_audit_server
+	$(PYTHON) -m ruff check core eval audit_server
 
 test:  ## Offline test gate (this is CI): the eval system's full suite.
 	$(PYTEST)

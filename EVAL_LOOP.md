@@ -24,7 +24,7 @@ one miss is honest (the judge flagged that our remapped calibration target is on
 grounded against a 3-surface bundle).
 
 ## Calibrating to the bar (the loop, run once by hand)
-The two sample reports aren't hand-written — `python -m qosmic_audit_server.audit` regenerates them
+The two sample reports aren't hand-written — `python -m audit_server.audit` regenerates them
 end to end: crawl the live store → the writer drafts a report from the cached bundle → a critic loop
 re-prompts on any deterministic failure until the gate is clean → render and overwrite. So the eval
 isn't just grading the harness; it's *driving* what the harness produces.

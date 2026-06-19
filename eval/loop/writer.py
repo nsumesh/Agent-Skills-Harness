@@ -9,7 +9,7 @@ from pathlib import Path
 DEFAULT_MODEL = "claude-sonnet-4-6"
 
 BASE_PROMPT = (
-    "You are Qosmic's CRO audit writer. Given a storefront's cached bundle, produce ONE "
+    "You are a CRO audit writer. Given a storefront's cached bundle, produce ONE "
     "schema-valid AuditReport as JSON. Ground every experiment in the captured artifacts. "
     "Spread evidence across DISTINCT captured surfaces — do not cite the same artifact for more "
     "than three experiments. Anchor each experiment to a specific captured surface (a real PDP, the "

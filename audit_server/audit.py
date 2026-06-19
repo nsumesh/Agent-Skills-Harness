@@ -2,7 +2,7 @@
 that capture, re-prompt it with any eval failures until it's clean (the pre-write critic), then
 render. The whole harness as one call.
 
-  python -m qosmic_audit_server.audit https://store.com [https://other.com ...]
+  python -m audit_server.audit https://store.com [https://other.com ...]
   (no args → audits gingerpeople + zenrojas into sample_output/)
 """
 

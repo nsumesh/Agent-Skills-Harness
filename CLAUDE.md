@@ -1,19 +1,19 @@
-# Qosmic CRO Audit Harness — agent context
+# CRO Audit Harness — agent context
 
-This repo turns a coding agent into Qosmic's storefront CRO audit agent. Input: one Shopify
-storefront URL. Output: one structured audit report at the bar of `target_report.md`.
+This repo turns a coding agent into a storefront CRO audit agent. Input: one Shopify
+storefront URL. Output: one structured audit report.
 
 ## How to run an audit
 Follow the playbook in **`skills/storefront-audit/SKILL.md`**. It orchestrates the
-`qosmic-audit` MCP tools, then reasons per-pillar and writes a schema-valid report.
+`cro-audit` MCP tools, then reasons per-pillar and writes a schema-valid report.
 
-## MCP tools (server: `qosmic_audit_server/server.py`, run with `qosmic-audit`)
+## MCP tools (server: `audit_server/server.py`, run with `cro-audit`)
 - `fingerprint_store(url)` — platform + endpoint reachability → catalog branch.
 - `fetch_catalog(url)` — products via products.json → sitemap → DOM waterfall.
 - `crawl_storefront(url)` — screenshots + content into a cached bundle + honest manifest.
 - `run_technical_checks(url)` — the 15-row technical table.
 
-All tool logic lives in importable `core/` and `qosmic_audit_server/`; the eval imports `core/`
+All tool logic lives in importable `core/` and `audit_server/`; the eval imports `core/`
 directly (no network hop).
 
 ## The four hard rules (override everything else)

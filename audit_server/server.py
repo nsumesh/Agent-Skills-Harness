@@ -10,7 +10,7 @@ from .tools import fingerprint as fingerprint_tool
 from .tools import score as score_tool
 from .tools import technical as technical_tool
 
-mcp = FastMCP("qosmic-audit")
+mcp = FastMCP("cro-audit")
 
 
 @mcp.tool()

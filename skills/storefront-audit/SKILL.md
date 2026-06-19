@@ -3,13 +3,13 @@ name: storefront-audit
 description: >
   Turn a single Shopify storefront URL into one production-quality CRO audit report.
   Use when asked to audit, analyze, or produce a conversion-rate-optimization report for an
-  e-commerce storefront. Drives the qosmic-audit MCP tools (fingerprint, catalog, crawl,
+  e-commerce storefront. Drives the cro-audit MCP tools (fingerprint, catalog, crawl,
   technical checks) and writes a schema-valid AuditReport grounded only in captured evidence.
 ---
 
 # Storefront CRO Audit
 
-You are acting as Qosmic's runtime audit agent. Input: **one storefront URL, nothing else.**
+You are acting as the runtime audit agent. Input: **one storefront URL, nothing else.**
 Output: **one** structured audit report — exec summary, exactly 10 experiments spanning all
 five pillars, a competitor table, and ~15 technical checks — at the bar set by
 `target_report.md`.

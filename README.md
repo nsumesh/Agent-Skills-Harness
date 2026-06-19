@@ -1,8 +1,8 @@
-# Qosmic Audit Harness
+# CRO Audit Harness
 
 A runtime harness that turns a coding agent (Claude Code, Codex, or anything similar) into a
 storefront auditor, plus the eval system that grades its reports and a loop that improves the
-writer over time. Built for any Shopify store, calibrated against `target_report.md`.
+writer over time. Built for any Shopify store.
 
 ## What it does
 
@@ -24,7 +24,7 @@ Three layers, kept separate so each can be reused on its own.
 Agent ── reads ──▶  Layer 1   skills/storefront-audit/  (the playbook)
   │ calls tools
   ▼
-            Layer 2   qosmic_audit_server/   (thin FastMCP server)
+            Layer 2   audit_server/   (thin FastMCP server)
   │ wraps
   ▼
             Layer 3   core/                  (importable: contract, renderer, probes, checks, eval)
@@ -39,7 +39,7 @@ Agent ── reads ──▶  Layer 1   skills/storefront-audit/  (the playbook)
 - **`core/` holds the contract** (`schema.py`) and the renderer, so a report literally can't be
   malformed. The eval and the loop import it directly.
 
-(The server package is named `qosmic_audit_server` rather than `mcp` so it can't shadow the
+(The server package is named `audit_server` rather than `mcp` so it can't shadow the
 installed MCP SDK.)
 
 ## Getting started
@@ -65,9 +65,9 @@ reason, write — using these tools:
 | `score_report(report, slug)` | the eval, exposed as a tool so the agent can self-check |
 
 The output lands in `sample_output/<slug>/report.md` (also `.html` and `.json`). To capture the
-artifact bundles up front, run `python -m qosmic_audit_server.record_bundles`.
+artifact bundles up front, run `python -m audit_server.record_bundles`.
 
-The harness can also drive the whole thing itself: `python -m qosmic_audit_server.audit` crawls each
+The harness can also drive the whole thing itself: `python -m audit_server.audit` crawls each
 store live, has the writer draft a report from the cached bundle, runs a critic loop that re-prompts
 on any deterministic failure until the gate is clean, and overwrites `sample_output/`. That's how the
 two sample reports in this repo are produced — they're an output of the harness, not hand-written.
@@ -99,7 +99,7 @@ For the full autonomy argument, see `EVAL_LOOP.md`.
 
 ```
 core/                 the output contract, renderer, probes, PSI, checks, eval API
-qosmic_audit_server/  the FastMCP server + tools
+audit_server/         the FastMCP server + tools
 skills/               the portable audit playbook (SKILL.md + references/)
 eval/                 deterministic / judge / calibration / redteam / loop + recorded bundles
 sample_output/        the two finished audits
